@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">sashaITSchool</string>
+    <string name="test_scrollText">Азбука Мо́рзе, «Морзя́нка», Код Мо́рзе — способ знакового кодирования, представление букв алфавита, цифр, знаков препинания и других символов последовательностью сигналов: длинных и коротких. За единицу времени принимается длительность одной точки. Длительность тире равна трём точкам.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

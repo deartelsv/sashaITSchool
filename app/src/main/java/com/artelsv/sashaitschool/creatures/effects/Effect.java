@@ -1,0 +1,71 @@
+package com.artelsv.sashaitschool.creatures.effects;
+
+import com.artelsv.sashaitschool.creatures.Creature;
+import com.artelsv.sashaitschool.creatures.Hero;
+
+public class Effect {
+    private String name;
+    private Integer power;
+    private Integer effectType;
+    private Integer extraEffectType = 0;
+
+    public Effect(String name, Integer power, Integer effectType) {
+        this.name = name;
+        this.power = power;
+        this.effectType = effectType;
+    }
+
+    public Effect(String name, Integer power, Integer effectType, Integer extraEffectType) {
+        this.name = name;
+        this.power = power;
+        this.effectType = effectType;
+        this.extraEffectType = extraEffectType;
+    }
+
+    public void EffectCast(Creature creature){
+        //тут я определяю 5 типов эффектов
+        // 1 - получение хп
+        // 2 - получение денег
+        // 3 - получение урона
+        // 4 - получение выносливости
+        // 5 - получение защиты
+        //
+        switch (effectType){
+            case 1:
+                creature.hpRegen(power);
+                break;
+            case 2:
+                creature.moneyInc(power);
+                break;
+            case 3:
+                creature.damage(power);
+                break;
+            case 4:
+                creature.powerInc(power);
+                break;
+            case 5:
+                creature.protectionInc(power);
+                break;
+        }
+
+        if (extraEffectType != 0) {
+            switch (extraEffectType) {
+                case 1:
+                    creature.hpRegen(power);
+                    break;
+                case 2:
+                    creature.moneyInc(power);
+                    break;
+                case 3:
+                    creature.damage(power);
+                    break;
+                case 4:
+                    creature.powerInc(power);
+                    break;
+                case 5:
+                    creature.protectionInc(power);
+                    break;
+            }
+        }
+    }
+}
