@@ -16,6 +16,15 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/textStats"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_weight="1"
+
+                android:text="Stats"
+                android:textAlignment="center" />
+
+            <TextView
                 android:id="@+id/textCoin"
                 android:layout_width="match_parent"
                 android:layout_height="16dp"
@@ -40,15 +49,6 @@
                 android:drawableLeft="@drawable/sword"
                 android:layout_weight="1"
                 android:text="powerCount"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/textProtection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/shield"
-                android:layout_weight="1"
-                android:text="protectionCount"
                 android:textAlignment="center" />
 
         </LinearLayout>

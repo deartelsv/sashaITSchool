@@ -5,15 +5,23 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.artelsv.sashaitschool.creatures.Hero;
 import com.artelsv.sashaitschool.creatures.effects.Effect;
+import com.artelsv.sashaitschool.creatures.effects.EffectsStore;
+import com.artelsv.sashaitschool.items.InvenotoryAdapter;
+import com.artelsv.sashaitschool.items.Item;
+import com.artelsv.sashaitschool.items.ItemsStore;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -29,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
     //Hero
     Hero hero;
     //
-    //Effects
-    ArrayList<Effect> effects;
     //
     //Buttons
     Button button1;
@@ -48,11 +54,22 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView inventory_store;
     LinearLayoutManager gm;
     InvenotoryAdapter ia;
-
+    //all items and effects
+    ArrayList<Item> items;
+    ArrayList<Effect> effects;
+    //
     //Fragments (это крч кастыль. Можно было умнее сделать. Но так проще)
     View inventoryFrag;
     View shopFrag;
+        //Fragments views
+        Integer selectedItem;
+
+        ImageButton sellItem;
+
+        TextView ifItemName;
+        TextView ifItemDesc;
     //
+    private int currentApiVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +85,27 @@ public class MainActivity extends AppCompatActivity {
     }
     //init
     private void init(){
+        initHideButtonsBar();
         initProgressTimer();
         initHero();
         initEffects();
+        initItems();
         initFragmentTextViews();
         initInventoryStore();
         initFragments();
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                    View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    } // НЕТРОГАТЬ БЛЯТЬ 2
 
     private void initProgressTimer(){ //Ход времени в игре
 
@@ -90,16 +121,63 @@ public class MainActivity extends AppCompatActivity {
 
     private void initEffects(){
         effects = new ArrayList<Effect>();
-        Effect effect = new Effect("Beat", 2, 2);
-        effects.add(effect);
-        effects.get(0).EffectCast(hero);
+        Effect newEffect;
+        effects.add(newEffect = new Effect("heal", 1, 1));
+        //Effects init
+
     }
+
+    private void initItems(){ // Загрузка итемов
+        items = new ArrayList<Item>();
+
+        Item newItem;
+        items.add(newItem = new Item("tew1", "t1es", 1, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew2", "t2es", 2, 0, effects.get(0), getDrawable(R.drawable.slot_chest)));
+        items.add(newItem = new Item("tew3", "t3es", 3, 0, effects.get(0), getDrawable(R.drawable.slot_feet)));
+        items.add(newItem = new Item("tew4", "4tes", 4, 0, effects.get(0), getDrawable(R.drawable.slot_mainhand)));
+        items.add(newItem = new Item("tew5", "t5es", 5, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "Sasha tak soidet7", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+    }
+
+    private void initHideButtonsBar(){
+        currentApiVersion = android.os.Build.VERSION.SDK_INT;
+        final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+        if (currentApiVersion >= Build.VERSION_CODES.KITKAT) {
+            getWindow().getDecorView().setSystemUiVisibility(flags);
+            final View decorView = getWindow().getDecorView();
+            decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+                @Override
+                public void onSystemUiVisibilityChange(int visibility) {
+                    if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
+                        decorView.setSystemUiVisibility(flags);
+                    }
+                }
+            });
+        }
+    } // НЕТРОГАТЬ БЛЯТЬ
 
     private void initFragmentTextViews(){
         textCoin = findViewById(R.id.textCoin);
         textHp = findViewById(R.id.textHp);
         textPower = findViewById(R.id.textPower);
-        textProtection = findViewById(R.id.textProtection);
+
+        //inventory fragment
+        ifItemDesc = findViewById(R.id.textView3);
+        ifItemName = findViewById(R.id.textView4);
+        sellItem = findViewById(R.id.sellButton);
     }
 
     private void initInventoryStore(){
@@ -107,9 +185,25 @@ public class MainActivity extends AppCompatActivity {
         gm = new GridLayoutManager(this,2);
         inventory_store.setLayoutManager(gm);
         inventory_store.setHasFixedSize(true);
-        ia = new InvenotoryAdapter(20);
+        ia = new InvenotoryAdapter(items);
         inventory_store.setAdapter(ia);
 
+        inventory_store.addOnItemTouchListener(new RecyclerTouchListener(this, inventory_store, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Log.e("test", String.valueOf(position));
+                Log.e("test", items.get(position).toString());
+                ifItemName.setText(items.get(position).getName());
+                ifItemDesc.setText(items.get(position).getDesc());
+                selectedItem = position;
+
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
     }
 
     private void initFragments(){
@@ -118,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
         shopFrag.setVisibility(View.INVISIBLE);
     }
+
     //
     //inGame
     private void updateStats(){
@@ -133,9 +228,10 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.button1: // 1
                 Log.e("test",hero.toString());
+                Log.e("test", items.get(0).toString());
                 break;
             case R.id.button2: // 2
-                effects.get(0).EffectCast(hero);
+                new Effect("test", 2, 2).EffectCast(hero);
                 updateStats();
                 break;
             case R.id.button3: // 3
@@ -151,7 +247,10 @@ public class MainActivity extends AppCompatActivity {
                 shopFrag.setVisibility(View.INVISIBLE);
                 inventoryFrag.setVisibility(View.VISIBLE);
                 break;
-
+            case R.id.sellButton:
+                ia.removeAt(selectedItem, getDrawable(R.drawable.slot_secondaryhand));
+                Log.e("test","sellButton");
+                break;
         }
 
     }

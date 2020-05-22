@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="180dp"
-    android:layout_height="210dp"
+    android:layout_height="180dp"
     tools:context=".fragments.Inventory">
 
     <LinearLayout
@@ -29,6 +29,7 @@
                 android:layout_width="16dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="button1Click"
                 android:src="@drawable/coin" />
 
             <TextView
@@ -60,83 +61,24 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/slotHead"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="29dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="29dp"
-                    android:src="@drawable/coin"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/slot_head" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Item Name" />
 
-                <ImageView
-                    android:id="@+id/slotChest"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="29dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="29dp"
-                    android:src="@drawable/slot_chest"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/slotHead" />
-
-                <ImageView
-                    android:id="@+id/slotLegs"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="29dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="29dp"
-                    android:src="@drawable/slot_legs"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/slotChest" />
-
-                <ImageView
-                    android:id="@+id/slot_feet"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="29dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="29dp"
-                    android:src="@drawable/slot_feet"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/slotLegs" />
-
-                <ImageView
-                    android:id="@+id/slotMainHand"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="8dp"
-                    android:src="@drawable/slot_mainhand"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/slot_feet" />
-
-                <ImageView
-                    android:id="@+id/slotSecondaryHand"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:src="@drawable/slot_secondaryhand"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/slot_feet" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Item Description" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

@@ -1,5 +1,6 @@
-package com.artelsv.sashaitschool;
+package com.artelsv.sashaitschool.items;
 
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 
 import com.artelsv.sashaitschool.creatures.effects.Effect;
@@ -8,18 +9,25 @@ public class Item {
     private String name;
     private String desc;
     private Integer price;
-    private Byte type;
+    private Integer type;
     private Effect effect;
-    private Image icon;
+    private Drawable icon;
 
-    public Item(String name, String desc, Integer price, Byte type, Effect effect, Image icon) {
+    public Item(String name, String desc, Integer price, Integer type, Effect effect, Drawable icon) {
         this.name = name;
         this.desc = desc;
         this.price = price;
         this.type = type;
         this.effect = effect;
         this.icon = icon;
+    }
 
+    public Item(String name, String desc, Integer price, Integer type, Drawable icon) {
+        this.name = name;
+        this.desc = desc;
+        this.price = price;
+        this.type = type;
+        this.icon = icon;
     }
 
     public String getName() {
@@ -38,11 +46,11 @@ public class Item {
         return effect;
     }
 
-    public Image getIcon() {
+    public Drawable getIcon() {
         return icon;
     }
 
-    public Byte getType() {
+    public Integer getType() {
         return type;
     }
 
@@ -57,4 +65,5 @@ public class Item {
                 ", icon=" + icon +
                 '}';
     }
+
 }
