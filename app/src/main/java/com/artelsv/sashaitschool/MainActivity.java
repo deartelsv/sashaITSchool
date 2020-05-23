@@ -217,7 +217,6 @@ public class MainActivity extends AppCompatActivity {
     //inGame
     private void updateStats(){
         textCoin.setText(hero.getMoney().toString());
-        textProtection.setText(hero.getProtection().toString());
         textPower.setText(hero.getPower().toString());
         textHp.setText(hero.getHp().toString());
     }
@@ -231,7 +230,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("test", items.get(0).toString());
                 break;
             case R.id.button2: // 2
-                new Effect("test", 2, 2).EffectCast(hero);
+                Effect effect = new Effect("test", 2, 2);
+                effect.EffectCast(hero);
                 updateStats();
                 break;
             case R.id.button3: // 3
