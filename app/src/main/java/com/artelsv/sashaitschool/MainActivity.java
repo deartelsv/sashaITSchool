@@ -136,22 +136,22 @@ public class MainActivity extends AppCompatActivity {
         items = new ArrayList<Item>();
 
         Item newItem;
-        items.add(newItem = new Item("tew1", "t1es", 1, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew2", "t2es", 2, 0, effects.get(0), getDrawable(R.drawable.slot_chest)));
-        items.add(newItem = new Item("tew3", "t3es", 3, 0, effects.get(0), getDrawable(R.drawable.slot_feet)));
-        items.add(newItem = new Item("tew4", "4tes", 4, 0, effects.get(0), getDrawable(R.drawable.slot_mainhand)));
-        items.add(newItem = new Item("tew5", "t5es", 5, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "Sasha tak soidet7", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head)));
+        items.add(newItem = new Item("tew1", "t1es", 1, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew2", "t2es", 2, 0, effects.get(0), getDrawable(R.drawable.slot_chest), true));
+        items.add(newItem = new Item("tew3", "t3es", 3, 0, effects.get(0), getDrawable(R.drawable.slot_feet), true));
+        items.add(newItem = new Item("tew4", "4tes", 4, 0, effects.get(0), getDrawable(R.drawable.slot_mainhand), true));
+        items.add(newItem = new Item("tew5", "t5es", 5, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "Sasha tak soidet7", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head),false));
     }
 
     private void initHideButtonsBar(){

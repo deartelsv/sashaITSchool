@@ -11,23 +11,26 @@ public class Item {
     private Integer price;
     private Integer type;
     private Effect effect;
+    private boolean equip;
     private Drawable icon;
 
-    public Item(String name, String desc, Integer price, Integer type, Effect effect, Drawable icon) {
+    public Item(String name, String desc, Integer price, Integer type, Effect effect, Drawable icon, boolean equip) {
         this.name = name;
         this.desc = desc;
         this.price = price;
         this.type = type;
         this.effect = effect;
         this.icon = icon;
+        this.equip = equip;
     }
 
-    public Item(String name, String desc, Integer price, Integer type, Drawable icon) {
+    public Item(String name, String desc, Integer price, Integer type, Drawable icon, boolean equip) {
         this.name = name;
         this.desc = desc;
         this.price = price;
         this.type = type;
         this.icon = icon;
+        this.equip = equip;
     }
 
     public String getName() {

@@ -30,7 +30,7 @@ public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.In
 //     items.remove(position);
 //        notifyItemRemoved(position);
 //        notifyItemRangeChanged(position, items.size());
-        Item emptyItem = new Item("empty", "nothing", 0, 0, emptyDrawable);
+        Item emptyItem = new Item("empty", "nothing", 0, 0, emptyDrawable, false);
         items.set(position, emptyItem);
         notifyDataSetChanged();
     }

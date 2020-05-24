@@ -27,7 +27,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 //        items.remove(position);
 //        notifyItemRemoved(position);
 //        notifyItemRangeChanged(position, items.size());
-        Item emptyItem = new Item("empty", "nothing", 0, 0, emptyDrawable);
+        Item emptyItem = new Item("empty", "nothing", 0, 0, emptyDrawable, false);
         items.set(position, emptyItem);
         notifyDataSetChanged();
     }
