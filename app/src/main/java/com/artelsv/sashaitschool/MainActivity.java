@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView inventory_store;
     LinearLayoutManager gm;
     InvenotoryAdapter ia;
+    //Shop
+    RecyclerView shop_store;
+    LinearLayoutManager gm_2;
+    InvenotoryAdapter ia_2;
     //all items and effects
     ArrayList<Item> items;
     ArrayList<Effect> effects;
@@ -92,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         initItems();
         initFragmentTextViews();
         initInventoryStore();
+        initShopStore();
         initFragments();
     }
 
@@ -189,6 +194,32 @@ public class MainActivity extends AppCompatActivity {
         inventory_store.setAdapter(ia);
 
         inventory_store.addOnItemTouchListener(new RecyclerTouchListener(this, inventory_store, new RecyclerTouchListener.ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Log.e("test", String.valueOf(position));
+                Log.e("test", items.get(position).toString());
+                ifItemName.setText(items.get(position).getName());
+                ifItemDesc.setText(items.get(position).getDesc());
+                selectedItem = position;
+
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+    }
+
+    private void initShopStore(){
+        shop_store = findViewById(R.id.shop_store);
+        gm_2 = new GridLayoutManager(this,2);
+        shop_store.setLayoutManager(gm_2);
+        shop_store.setHasFixedSize(true);
+        ia_2 = new InvenotoryAdapter(items);
+        shop_store.setAdapter(ia_2);
+
+        shop_store.addOnItemTouchListener(new RecyclerTouchListener(this, shop_store, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 Log.e("test", String.valueOf(position));
