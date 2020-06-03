@@ -3,18 +3,19 @@ package com.artelsv.sashaitschool.creatures.effects;
 import java.util.ArrayList;
 
 public class EffectsStore {
-    //public static ArrayList<Effect> effects;
+    private ArrayList<Effect> effects;
 
-    public EffectsStore(ArrayList<Effect> effects) {
+    public EffectsStore() {
         init();
-        initEffects(effects);
     }
 
     private void init() {
-        //initEffects();
+        effects = new ArrayList<>();
+
+        initEffects();
     }
 
-    private void initEffects(ArrayList<Effect> effects){
+    private void initEffects(){
         Effect slot = new Effect("slot_empty", 2, 1);
         effects.add(slot);
 

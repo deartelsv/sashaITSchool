@@ -9,7 +9,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 
 public class ItemsStore {
-    //static ArrayList<Item> items;
+    ArrayList<Item> items;
 
     public ItemsStore(ArrayList<Item> items, ArrayList<Effect> effects)
     {

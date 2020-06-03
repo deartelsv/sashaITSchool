@@ -234,7 +234,7 @@
             android:layout_height="250dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/bonefire"
+            android:src="@drawable/koster_main"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
