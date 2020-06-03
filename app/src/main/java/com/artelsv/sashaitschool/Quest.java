@@ -10,17 +10,28 @@ public class Quest {
     private Integer rightAnswer;
     private String[] answersText;
     private Effect[] effects;
+    private Integer[] nextQuestID;
 
 
-    public Quest(String name, String description, Integer countOfAnswers, Integer rightAnswer, String[] answersText, Effect[] effects) {
+    public Quest(String name, String description, Integer countOfAnswers, Integer rightAnswer, String[] answersText, Effect[] effects, Integer[] nextQuestID) {
         this.name = name;
         this.description = description;
         this.countOfAnswers = countOfAnswers;
         this.rightAnswer = rightAnswer;
         this.answersText = answersText;
         this.effects = effects;
+        this.nextQuestID = nextQuestID;
 
         init();
+    }
+
+    public Quest(String name, String description, Integer countOfAnswers, String[] answersText, Effect[] effects, Integer[] nextQuestID) {
+        this.name = name;
+        this.description = description;
+        this.countOfAnswers = countOfAnswers;
+        this.answersText = answersText;
+        this.effects = effects;
+        this.nextQuestID = nextQuestID;
     }
 
     private void init(){
@@ -49,6 +60,10 @@ public class Quest {
 
     public Effect[] getEffects() {
         return effects;
+    }
+
+    public Integer[] getNextQuestID() {
+        return nextQuestID;
     }
 
     public boolean setAnswer(byte answer, Hero hero){

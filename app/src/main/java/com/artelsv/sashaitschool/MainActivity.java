@@ -28,6 +28,8 @@ import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
 
+    final static boolean DEBUG = true;
+
     //Timer Vars
     private final int UPDATETIME = 1000; //в миллесекундах
     ProgressBar progressTimer;
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     //Quest shit
     QuestLoader questLoader;
     QuestStore questStore;
+    Quest curQuest;
 
     private int currentApiVersion;
 
@@ -121,9 +124,22 @@ public class MainActivity extends AppCompatActivity {
     private void initProgressTimer(){ //Ход времени в игре
 
         progressTimer = findViewById(R.id.progressBar);
-        progressTimerTask = new ProgressTimerTask(progressTimer);
-        timer = new Timer();
-        timer.scheduleAtFixedRate(progressTimerTask,0,UPDATETIME);
+
+//        progressTimerTask = new ProgressTimerTask(progressTimer);
+//        timer = new Timer();
+//        timer.scheduleAtFixedRate(progressTimerTask,0,UPDATETIME);
+    }
+    /*      Обновление прогрессбара
+    output: FALSE - не происходит переход на новую главу
+            TRUE  - переход на новую главу              */
+    private boolean updateProgress(){
+
+        if (progressTimer.getProgress() >= progressTimer.getMax()){
+            return true;
+        } else {
+            progressTimer.incrementProgressBy(1);
+        }
+        return false;
     }
 
     private void initHero(){
@@ -255,6 +271,7 @@ public class MainActivity extends AppCompatActivity {
         questStore = new QuestStore();
 
         questLoader.loadQuest(questStore.getQuests().get(0));
+        curQuest = questStore.getQuests().get(0);
     }
 
     private void initEvents(){
@@ -278,20 +295,55 @@ public class MainActivity extends AppCompatActivity {
     public void button1Click(View view) { // чекаем нажатие кнопок
         switch (view.getId()){
 
-            //кнопки ивентов
-            case R.id.button1: // 1
-                Log.e("test",hero.toString());
-                Log.e("test", items.get(0).toString());
-                break;
-            case R.id.button2: // 2
-                Effect effect = new Effect("test", 2, 2);
-                effect.EffectCast(hero);
-                updateStats();
-                break;
-            case R.id.button3: // 3
+            /*     КНОПКИ ИВЕНТОВ И ОБРАБОТКА НАЖАТИЙ
+            Переход на новые квесты и каст эффектов*/
+            case R.id.button1: // 1 Button 1
+                if (DEBUG) {
+                    Log.e("test", hero.toString());
+                    Log.e("test", items.get(0).toString());
+                }
 
+                curQuest.getEffects()[0].EffectCast(hero);
+                updateStats();
+
+                questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[0]));
+                curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[0]);
+                updateProgress();
                 break;
-            case R.id.button4: // 4
+            case R.id.button2: // 2 Button 2
+                if (DEBUG) {
+                    Effect effect = new Effect("test", 2, 2);
+                    effect.EffectCast(hero);
+                    updateStats();
+                }
+
+                curQuest.getEffects()[1].EffectCast(hero);
+                updateStats();
+
+                questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[1]));
+                curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[1]);
+                break;
+            case R.id.button3: // 3 Button 3
+                if (DEBUG) {
+
+                }
+
+                curQuest.getEffects()[2].EffectCast(hero);
+                updateStats();
+
+                questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[2]));
+                curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[2]);
+                break;
+            case R.id.button4: // 4 Button 4
+                if (DEBUG) {
+
+                }
+
+                curQuest.getEffects()[3].EffectCast(hero);
+                updateStats();
+
+                questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[3]));
+                curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[3]);
                 break;
             //кнопки ивентов
 

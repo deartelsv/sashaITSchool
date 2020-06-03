@@ -30,7 +30,12 @@ public class QuestStore {
     private void initQuests(){
         String[] strings = {"test1", "test2", "test3", "test4"};
         Effect[] effects = {new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2)};
+        Integer[] nextQuests = {1, 1, 1, 1};
+        quests.add(new Quest("test", "test", 4, 1, strings, effects, nextQuests));
 
-        quests.add(new Quest("test", "test", 4, 1, strings, effects));
+        String[] strings1 = {"te2st1", "test2", "test3", "test4"};
+        Effect[] effects1 = {new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2)};
+        Integer[] nextQuests1 = {0, 0, 0, 0};
+        quests.add(new Quest("test", "test", 4, 1, strings1, effects1,nextQuests1));
     }
 }

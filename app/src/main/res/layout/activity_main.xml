@@ -32,7 +32,7 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="276dp"
             android:layout_height="32dp"
-            android:max="100"
+            android:max="5"
             android:progress="0"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/imageView"
