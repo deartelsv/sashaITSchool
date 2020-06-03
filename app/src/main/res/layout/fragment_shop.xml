@@ -31,7 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Shop"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#fff"/>
 
             <ImageButton
                 android:id="@+id/imageButton2"
@@ -68,7 +69,8 @@
                     android:text="TextView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textColor="#fff"/>
 
                 <ScrollView
                     android:layout_width="match_parent"
@@ -88,6 +90,7 @@
                             android:id="@+id/shop_tvItemDesc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="#fff"
                             android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView" />
                     </LinearLayout>
                 </ScrollView>
