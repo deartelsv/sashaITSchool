@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
     Hero hero;
     //
     //
-    //Buttons
+    //Buttons and events shit
+    TextView textView;
     Button button1;
     Button button2;
     Button button3;
@@ -72,7 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView ifItemName;
         TextView ifItemDesc;
-    //
+    //Quest shit
+    QuestLoader questLoader;
+    QuestStore questStore;
+
     private int currentApiVersion;
 
     @Override
@@ -98,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
         initInventoryStore();
         initShopStore();
         initFragments();
+        initEvents();
+        initQuestLoader();
     }
 
     @Override
@@ -244,6 +250,21 @@ public class MainActivity extends AppCompatActivity {
         shopFrag.setVisibility(View.INVISIBLE);
     }
 
+    private void initQuestLoader(){
+        questLoader = new QuestLoader(textView, button1, button2, button3, button4);
+        questStore = new QuestStore();
+
+        questLoader.loadQuest(questStore.getQuests().get(0));
+    }
+
+    private void initEvents(){
+        textView = findViewById(R.id.textView);
+
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        button4 = findViewById(R.id.button4);
+    }
     //
     //inGame
     private void updateStats(){
@@ -256,6 +277,8 @@ public class MainActivity extends AppCompatActivity {
     //click listener
     public void button1Click(View view) { // чекаем нажатие кнопок
         switch (view.getId()){
+
+            //кнопки ивентов
             case R.id.button1: // 1
                 Log.e("test",hero.toString());
                 Log.e("test", items.get(0).toString());
@@ -270,6 +293,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button4: // 4
                 break;
+            //кнопки ивентов
+
             case R.id.shopButton:
                 shopFrag.setVisibility(View.VISIBLE);
                 inventoryFrag.setVisibility(View.INVISIBLE);
