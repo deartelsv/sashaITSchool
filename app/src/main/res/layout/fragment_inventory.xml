@@ -90,8 +90,9 @@
                 <ImageButton
                     android:id="@+id/sellButton"
                     android:layout_width="32dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginStart="4dp"
+                    android:background="@drawable/button_invmag"
                     android:onClick="button1Click"
                     android:src="@drawable/coin"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -100,8 +101,9 @@
                 <ImageButton
                     android:id="@+id/useItemButton"
                     android:layout_width="32dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_marginEnd="4dp"
+                    android:background="@drawable/button_invmag"
                     android:scaleType="center"
                     android:src="@drawable/heart"
                     app:layout_constraintBottom_toBottomOf="parent"

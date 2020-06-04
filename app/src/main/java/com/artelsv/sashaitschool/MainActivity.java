@@ -356,7 +356,7 @@ public class MainActivity extends AppCompatActivity {
                 inventoryFrag.setVisibility(View.VISIBLE);
                 break;
             case R.id.sellButton:
-                ia.removeAt(selectedItem, getDrawable(R.drawable.slot_secondaryhand));
+                ia.removeAt(selectedItem, getDrawable(R.drawable.slot));
                 Log.e("test","sellButton");
                 break;
         }
