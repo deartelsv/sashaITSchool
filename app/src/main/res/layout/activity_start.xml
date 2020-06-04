@@ -5,7 +5,7 @@
     android:id="@+id/startbackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/example"
+    android:background="@drawable/menu"
     android:clickable="true"
     android:onClick="startActiveClick"
     tools:context=".StartActivity" />
