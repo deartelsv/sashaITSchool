@@ -1,5 +1,7 @@
 package com.artelsv.sashaitschool;
 
+import android.graphics.drawable.Drawable;
+
 import com.artelsv.sashaitschool.creatures.Hero;
 import com.artelsv.sashaitschool.creatures.effects.Effect;
 
@@ -11,9 +13,11 @@ public class Quest {
     private String[] answersText;
     private Effect[] effects;
     private Integer[] nextQuestID;
+    private Drawable[] drawables;
 
 
-    public Quest(String name, String description, Integer countOfAnswers, Integer rightAnswer, String[] answersText, Effect[] effects, Integer[] nextQuestID) {
+
+    public Quest(String name, String description, Integer countOfAnswers, Integer rightAnswer, String[] answersText, Effect[] effects, Integer[] nextQuestID, Drawable[] drawables) {
         this.name = name;
         this.description = description;
         this.countOfAnswers = countOfAnswers;
@@ -21,17 +25,19 @@ public class Quest {
         this.answersText = answersText;
         this.effects = effects;
         this.nextQuestID = nextQuestID;
+        this.drawables = drawables;
 
         init();
     }
 
-    public Quest(String name, String description, Integer countOfAnswers, String[] answersText, Effect[] effects, Integer[] nextQuestID) {
+    public Quest(String name, String description, Integer countOfAnswers, String[] answersText, Effect[] effects, Integer[] nextQuestID, Drawable[] drawables) {
         this.name = name;
         this.description = description;
         this.countOfAnswers = countOfAnswers;
         this.answersText = answersText;
         this.effects = effects;
         this.nextQuestID = nextQuestID;
+        this.drawables = drawables;
     }
 
     private void init(){
@@ -64,6 +70,10 @@ public class Quest {
 
     public Integer[] getNextQuestID() {
         return nextQuestID;
+    }
+
+    public Drawable[] getDrawables() {
+        return drawables;
     }
 
     public boolean setAnswer(byte answer, Hero hero){

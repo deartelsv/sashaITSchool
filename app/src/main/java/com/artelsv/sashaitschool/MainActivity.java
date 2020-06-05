@@ -27,6 +27,8 @@ import com.artelsv.sashaitschool.items.ItemsStore;
 import java.util.ArrayList;
 import java.util.Timer;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class MainActivity extends AppCompatActivity {
 
     final static boolean DEBUG = true;
@@ -81,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
     QuestLoader questLoader;
     QuestStore questStore;
     Quest curQuest;
+
+    GifImageView gifImageView;
 
     private int currentApiVersion;
 
@@ -273,8 +277,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQuestLoader(){
+        ArrayList<Drawable> drawables = new ArrayList<>();
+        gifImageView = findViewById(R.id.gifImageView);
+        drawables.add(getDrawable(R.drawable.koster_main));
+        drawables.add(getDrawable(R.drawable.test));
+
         questLoader = new QuestLoader(textView, button1, button2, button3, button4);
-        questStore = new QuestStore();
+        questStore = new QuestStore(drawables);
 
         questLoader.loadQuest(questStore.getQuests().get(0));
         curQuest = questStore.getQuests().get(0);
@@ -311,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[0].EffectCast(hero);
                 updateStats();
-
+                gifImageView.setImageDrawable(curQuest.getDrawables()[0]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[0]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[0]);
                 updateProgress();
@@ -325,7 +334,8 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[1].EffectCast(hero);
                 updateStats();
-
+                gifImageView.setImageDrawable(curQuest.getDrawables()[1]);
+                gifImageView.animate().start();
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[1]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[1]);
                 break;
@@ -336,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[2].EffectCast(hero);
                 updateStats();
-
+                gifImageView.setImageDrawable(curQuest.getDrawables()[2]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[2]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[2]);
                 break;
@@ -347,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[3].EffectCast(hero);
                 updateStats();
-
+                gifImageView.setImageDrawable(curQuest.getDrawables()[3]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[3]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[3]);
                 break;
