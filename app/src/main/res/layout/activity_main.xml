@@ -125,24 +125,30 @@
                         android:id="@+id/button1"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/button_event"
+                        android:background="@drawable/button_event_f"
                         android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
                         android:text="answer1"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp" />
 
                     <Button
                         android:id="@+id/button3"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/button_event"
+                        android:background="@drawable/button_event_f"
                         android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
-                        android:text="answer1" />
+                        android:text="answer1"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -155,25 +161,31 @@
                         android:id="@+id/button2"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/button_event"
+                        android:background="@drawable/button_event_f"
                         android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
                         android:padding="4dp"
                         android:text="Азбука морзе для лохов, и я блять личность НАХУЙ Я АГОНЬ"
-                        android:textSize="10sp" />
+                        android:textSize="10sp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="1dp"/>
 
                     <Button
                         android:id="@+id/button4"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:background="@drawable/button_event"
+                        android:background="@drawable/button_event_f"
                         android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
-                        android:text="answer1" />
+                        android:text="answer1"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginBottom="1dp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -197,21 +209,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="#66212121"
-            app:layout_constraintEnd_toStartOf="@+id/view_events"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_eventPlayer" />
-
-        <View
-            android:id="@+id/view_events"
-            android:layout_width="180dp"
-            android:layout_height="422dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="#66212121"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/view_stats"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/view_eventPlayer"
@@ -219,9 +218,7 @@
             android:layout_height="250dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:background="@drawable/example"
-            app:layout_constraintEnd_toStartOf="@+id/view_events"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

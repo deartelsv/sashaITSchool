@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView shop_store;
     LinearLayoutManager gm_2;
     InvenotoryAdapter ia_2;
+
     //all items and effects
     ArrayList<Item> items;
     ArrayList<Effect> effects;
@@ -224,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
                 ifItemDesc.setText(items.get(position).getDesc());
                 selectedItem = position;
 
+
             }
 
             @Override
@@ -249,6 +252,9 @@ public class MainActivity extends AppCompatActivity {
                 ifItemName.setText(items.get(position).getName());
                 ifItemDesc.setText(items.get(position).getDesc());
                 selectedItem = position;
+
+
+
 
             }
 
@@ -359,6 +365,11 @@ public class MainActivity extends AppCompatActivity {
                 ia.removeAt(selectedItem, getDrawable(R.drawable.slot));
                 Log.e("test","sellButton");
                 break;
+            case R.id.useItemButton:
+                ia.selected_item = selectedItem;
+
+                Log.e("test", "test");
+
         }
 
     }

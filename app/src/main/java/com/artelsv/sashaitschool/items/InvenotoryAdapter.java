@@ -18,9 +18,8 @@ import android.content.res.Resources;
 
 public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.InventoryViewHolder> {
 
-    private int numberItems;
     private ArrayList<Item> items;
-
+    public int selected_item = -1;
     public InvenotoryAdapter(ArrayList<Item> items) {
         //this.numberItems = numberItems;
         this.items = items;
@@ -53,8 +52,9 @@ public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.In
 
 
     @Override
-    public void onBindViewHolder(@NonNull InventoryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull InventoryViewHolder holder, final int position) {
         holder.itemImage.setImageDrawable(items.get(position).getIcon());
+
     }
 
 
@@ -67,14 +67,18 @@ public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.In
     class InventoryViewHolder extends RecyclerView.ViewHolder {
         //item vars
         ImageView itemImage;
+        ImageView itemMask;
         //
 
         public InventoryViewHolder(@NonNull View itemView) {
             super(itemView);
 
             itemImage = itemView.findViewById(R.id.info_text);
+            itemMask = itemView.findViewById(R.id.item_mask);
             //itemImage.setImageDrawable(items.get());
         }
+
+
 
     }
 

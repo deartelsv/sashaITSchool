@@ -14,9 +14,9 @@
         app:srcCompat="@drawable/slot" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/item_mask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/mask_use" />
+        app:srcCompat="@drawable/kvadrat" />
 
 </FrameLayout>
