@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="button1Click"
-                android:src="@drawable/sword" />
+                android:src="@drawable/knopcka_ispolzovat" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -39,7 +39,7 @@
                 android:layout_width="16dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@drawable/coin" />
+                android:src="@drawable/knopcka_ispolzovat" />
 
         </LinearLayout>
 

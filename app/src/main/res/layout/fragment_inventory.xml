@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="button1Click"
-                android:src="@drawable/shield" />
+                android:src="@drawable/knopcka_ispolzovat" />
 
         </LinearLayout>
 

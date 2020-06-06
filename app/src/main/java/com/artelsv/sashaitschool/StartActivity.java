@@ -105,7 +105,9 @@ public class StartActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 startText.setAlpha(0f);
                 startText.setTextSize(18);
-                startText.setText("alladasjWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
+                startText.setText("Неизвестно какой век, год, время, местоположение.\n" +
+                        "Это история будет рассказывать нам о сам простом человеке, что усомнился в своей жизни и потерял смысл своего существования.\n" +
+                        "Он бросает все и отправляется в далекое путешествие на поиски того, что может хоть как-то возобновить ее.");
                 startText.setAlpha(1f);
                 startText.startAnimation(in);
 
@@ -121,8 +123,9 @@ public class StartActivity extends AppCompatActivity {
 
         startText.setAnimation(out);
         //startText.setAlpha(0f);
-        startText.setText("test");
-
+        if (test == false) {
+            startText.setText("any click");
+        }
 //        Intent intent = new Intent(this, MainActivity.class);
 //        startActivity(intent);
     }

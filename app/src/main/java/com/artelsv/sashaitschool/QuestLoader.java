@@ -20,7 +20,48 @@ public class QuestLoader {
     }
 
     public void loadQuest(Quest quest) {
-        textView.setText(quest.getName()+"\n"+quest.getDescription());
+
+        if (quest.getCountOfAnswers() == 1){
+            button2.setEnabled(false);
+            button3.setEnabled(false);
+            button4.setEnabled(false);
+
+            button2.setAlpha(0.5f);
+            button3.setAlpha(0.5f);
+            button4.setAlpha(0.5f);
+        }
+
+        if (quest.getCountOfAnswers() == 2){
+            button2.setEnabled(true);
+            button3.setEnabled(false);
+            button4.setEnabled(false);
+
+            button2.setAlpha(1f);
+            button3.setAlpha(0.5f);
+            button4.setAlpha(0.5f);
+        }
+
+        if (quest.getCountOfAnswers() == 3){
+            button2.setEnabled(true);
+            button3.setEnabled(true);
+            button4.setEnabled(false);
+
+            button2.setAlpha(1f);
+            button3.setAlpha(1f);
+            button4.setAlpha(0.5f);
+        }
+
+        if (quest.getCountOfAnswers() == 4){
+            button2.setEnabled(true);
+            button3.setEnabled(true);
+            button4.setEnabled(true);
+
+            button2.setAlpha(1f);
+            button3.setAlpha(1f);
+            button4.setAlpha(1f);
+        }
+
+        textView.append(quest.getName()+"\n"+quest.getDescription()+"\n"+"---"+"\n");
         button1.setText(quest.getAnswersText()[0]);
         button2.setText(quest.getAnswersText()[1]);
         button3.setText(quest.getAnswersText()[2]);

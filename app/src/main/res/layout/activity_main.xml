@@ -101,7 +101,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="8dp"
-                            android:text="@string/test_scrollText"
                             android:textColor="#fff"
                             android:textSize="12sp" />
 
@@ -125,30 +124,31 @@
                         android:id="@+id/button1"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@drawable/button_event_f"
-                        android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
                         android:text="answer1"
-                        android:textSize="14sp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginRight="1dp"
-                        android:layout_marginBottom="1dp" />
+                        android:textColor="#fff"
+                        android:textSize="10sp" />
 
                     <Button
                         android:id="@+id/button3"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@drawable/button_event_f"
-                        android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
                         android:text="answer1"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginRight="1dp"
-                        android:layout_marginBottom="1dp"/>
+                        android:textColor="#fff"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -177,15 +177,16 @@
                         android:id="@+id/button4"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@drawable/button_event_f"
-                        android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
                         android:text="answer1"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginBottom="1dp"/>
+                        android:textColor="#fff"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </LinearLayout>

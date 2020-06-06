@@ -284,11 +284,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQuestLoader(){
-        int[] drawables = {R.drawable.koster_main, R.drawable.test};
+        int[] drawables = {R.drawable.koster_main, R.drawable.podlojka};
         gifImageView = findViewById(R.id.gifImageView);
 
         questLoader = new QuestLoader(textView, button1, button2, button3, button4);
-        questStore = new QuestStore(drawables);
+        questStore = new QuestStore(drawables, hero);
 
         questLoader.loadQuest(questStore.getQuests().get(0));
         curQuest = questStore.getQuests().get(0);
@@ -340,18 +340,27 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("test", items.get(0).toString());
                 }
 
+                updateProgress();
+                if (progressTimer.getProgress() == 5){
+                    textView.setText("");
+                }
+
                 curQuest.getEffects()[0].EffectCast(hero);
                 updateStats();
                 gifImageView.setImageResource(curQuest.getDrawables()[0]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[0]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[0]);
-                updateProgress();
                 break;
             case R.id.button2: // 2 Button 2
                 if (DEBUG) {
                     Effect effect = new Effect("test", 2, 2);
                     effect.EffectCast(hero);
                     updateStats();
+                }
+
+                updateProgress();
+                if (progressTimer.getProgress() == 5){
+                    textView.setText("");
                 }
 
                 curQuest.getEffects()[1].EffectCast(hero);
@@ -367,6 +376,11 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
+                updateProgress();
+                if (progressTimer.getProgress() == 5){
+                    textView.setText("");
+                }
+
                 curQuest.getEffects()[2].EffectCast(hero);
                 updateStats();
                 gifImageView.setImageResource(curQuest.getDrawables()[2]);
@@ -376,6 +390,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button4: // 4 Button 4
                 if (DEBUG) {
 
+                }
+
+                updateProgress();
+                if (progressTimer.getProgress() == 5){
+                    textView.setText("");
                 }
 
                 curQuest.getEffects()[3].EffectCast(hero);
