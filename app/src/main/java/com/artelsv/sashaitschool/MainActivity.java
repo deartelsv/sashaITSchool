@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Build;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textPower;
     TextView textProtection;
     TextView textHp;
+    TextView statsInfo;
     //
     //Inventory
     RecyclerView inventory_store;
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView ifItemName;
         TextView ifItemDesc;
+        TextView ifInvInfo;
     //Quest shit
     QuestLoader questLoader;
     QuestStore questStore;
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         initFragments();
         initEvents();
         initQuestLoader();
+        initFonts();
     }
 
     @Override
@@ -248,6 +252,9 @@ public class MainActivity extends AppCompatActivity {
         ia_2 = new InvenotoryAdapter(items);
         shop_store.setAdapter(ia_2);
 
+        ifInvInfo = findViewById(R.id.invItemInfo);
+        statsInfo = findViewById(R.id.textStats);
+
         shop_store.addOnItemTouchListener(new RecyclerTouchListener(this, shop_store, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -277,10 +284,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQuestLoader(){
-        ArrayList<Drawable> drawables = new ArrayList<>();
+        int[] drawables = {R.drawable.koster_main, R.drawable.test};
         gifImageView = findViewById(R.id.gifImageView);
-        drawables.add(getDrawable(R.drawable.koster_main));
-        drawables.add(getDrawable(R.drawable.test));
 
         questLoader = new QuestLoader(textView, button1, button2, button3, button4);
         questStore = new QuestStore(drawables);
@@ -296,6 +301,23 @@ public class MainActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
+    }
+
+    private void initFonts(){
+        Typeface type = Typeface.createFromAsset(getAssets(),"19190.ttf");
+        textCoin.setTypeface(type);
+        textHp.setTypeface(type);
+        textPower.setTypeface(type);
+//        textProtection.setTypeface(type);
+        textView.setTypeface(type);
+        ifItemDesc.setTypeface(type);
+        ifItemName.setTypeface(type);
+        button1.setTypeface(type);
+        button2.setTypeface(type);
+        button3.setTypeface(type);
+        button4.setTypeface(type);
+        ifInvInfo.setTypeface(type);
+        statsInfo.setTypeface(type);
     }
     //
     //inGame
@@ -320,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[0].EffectCast(hero);
                 updateStats();
-                gifImageView.setImageDrawable(curQuest.getDrawables()[0]);
+                gifImageView.setImageResource(curQuest.getDrawables()[0]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[0]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[0]);
                 updateProgress();
@@ -334,10 +356,11 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[1].EffectCast(hero);
                 updateStats();
-                gifImageView.setImageDrawable(curQuest.getDrawables()[1]);
-                gifImageView.animate().start();
+                gifImageView.setImageResource(curQuest.getDrawables()[1]);
+                //gifImageView.setImageResource(R.drawable.test);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[1]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[1]);
+
                 break;
             case R.id.button3: // 3 Button 3
                 if (DEBUG) {
@@ -346,7 +369,7 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[2].EffectCast(hero);
                 updateStats();
-                gifImageView.setImageDrawable(curQuest.getDrawables()[2]);
+                gifImageView.setImageResource(curQuest.getDrawables()[2]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[2]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[2]);
                 break;
@@ -357,7 +380,7 @@ public class MainActivity extends AppCompatActivity {
 
                 curQuest.getEffects()[3].EffectCast(hero);
                 updateStats();
-                gifImageView.setImageDrawable(curQuest.getDrawables()[3]);
+                gifImageView.setImageResource(curQuest.getDrawables()[3]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[3]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[3]);
                 break;

@@ -15,13 +15,13 @@ import java.util.ArrayList;
 
 public class QuestStore {
     private ArrayList<Quest> quests;
-    private ArrayList<Drawable> drawables;
+    private int[] drawables;
 
     public QuestStore() {
         init();
     }
 
-    public QuestStore(ArrayList<Drawable> drawables) {
+    public QuestStore(int[] drawables) {
         this.drawables = drawables;
 
         init();
@@ -41,13 +41,13 @@ public class QuestStore {
         String[] strings = {"test1", "test2", "test3", "test4"};
         Effect[] effects = {new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2)};
         Integer[] nextQuests = {1, 1, 1, 1};
-        Drawable[] drawables1 = {drawables.get(0), drawables.get(1), drawables.get(0), drawables.get(1)};
+        int[] drawables1 = {drawables[0], drawables[1], drawables[0], drawables[1]};
         quests.add(new Quest("test", "test", 4, 1, strings, effects, nextQuests, drawables1));
 
         String[] strings1 = {"te2st1", "test2", "test3", "test4"};
         Effect[] effects1 = {new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2), new Effect("name", 2, 2)};
         Integer[] nextQuests1 = {0, 0, 0, 0};
-        Drawable[] drawables2 = {drawables.get(0), drawables.get(1), drawables.get(0), drawables.get(1)};
+        int[] drawables2 = {drawables[0], drawables[1], drawables[0], drawables[1]};
         quests.add(new Quest("test", "test", 4, 1, strings1, effects1,nextQuests1, drawables2));
     }
 }

@@ -13,11 +13,11 @@ public class Quest {
     private String[] answersText;
     private Effect[] effects;
     private Integer[] nextQuestID;
-    private Drawable[] drawables;
+    private int[] drawables;
 
 
 
-    public Quest(String name, String description, Integer countOfAnswers, Integer rightAnswer, String[] answersText, Effect[] effects, Integer[] nextQuestID, Drawable[] drawables) {
+    public Quest(String name, String description, Integer countOfAnswers, Integer rightAnswer, String[] answersText, Effect[] effects, Integer[] nextQuestID, int[] drawables) {
         this.name = name;
         this.description = description;
         this.countOfAnswers = countOfAnswers;
@@ -30,7 +30,7 @@ public class Quest {
         init();
     }
 
-    public Quest(String name, String description, Integer countOfAnswers, String[] answersText, Effect[] effects, Integer[] nextQuestID, Drawable[] drawables) {
+    public Quest(String name, String description, Integer countOfAnswers, String[] answersText, Effect[] effects, Integer[] nextQuestID, int[] drawables) {
         this.name = name;
         this.description = description;
         this.countOfAnswers = countOfAnswers;
@@ -72,7 +72,7 @@ public class Quest {
         return nextQuestID;
     }
 
-    public Drawable[] getDrawables() {
+    public int[] getDrawables() {
         return drawables;
     }
 
