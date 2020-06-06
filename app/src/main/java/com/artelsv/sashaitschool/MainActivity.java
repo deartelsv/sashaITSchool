@@ -32,7 +32,7 @@ import pl.droidsonroids.gif.GifImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    final static boolean DEBUG = true;
+    final static boolean DEBUG = false;
 
     //Timer Vars
     private final int UPDATETIME = 1000; //в миллесекундах
