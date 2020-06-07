@@ -73,10 +73,14 @@
             android:id="@+id/layout_events"
             android:layout_width="180dp"
             android:layout_height="422dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/layout_inventory"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_map"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
@@ -89,7 +93,9 @@
                 <ScrollView
                     android:id="@+id/event_textScroll"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -161,17 +167,17 @@
                         android:id="@+id/button2"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@drawable/button_event_f"
-                        android:textColor="#fff"
                         android:clickable="true"
                         android:foreground="?attr/selectableItemBackground"
                         android:onClick="button1Click"
                         android:padding="4dp"
                         android:text="Азбука морзе для лохов, и я блять личность НАХУЙ Я АГОНЬ"
-                        android:textSize="10sp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_marginBottom="1dp"/>
+                        android:textColor="#fff"
+                        android:textSize="10sp" />
 
                     <Button
                         android:id="@+id/button4"
@@ -199,7 +205,11 @@
             android:layout_height="282dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/map_glava1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/layout_inventory"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_stats" />
 
@@ -219,7 +229,6 @@
             android:layout_height="250dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/example"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -229,7 +238,11 @@
             android:layout_height="250dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/pusto"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/pustok"
+            app:layout_constraintBottom_toTopOf="@+id/view_stats"
+            app:layout_constraintEnd_toStartOf="@+id/layout_events"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -239,8 +252,12 @@
             android:layout_height="92dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/stati"
             android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/view_map"
+            app:layout_constraintEnd_toStartOf="@+id/layout_events"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/gifImageView">
 
@@ -273,6 +290,7 @@
             android:background="@drawable/magaz_invent"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_map"
             app:layout_constraintTop_toBottomOf="@+id/layout_events">
 
             <!--            <fragment-->
@@ -287,17 +305,17 @@
                 android:name="com.artelsv.sashaitschool.fragments.Shop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="3dp"
                 android:visibility="invisible"
-                tools:layout="@layout/fragment_shop"
-                android:layout_margin="3dp"/>
+                tools:layout="@layout/fragment_shop" />
 
             <fragment
                 android:id="@+id/fragmentInventory"
                 android:name="com.artelsv.sashaitschool.fragments.Inventory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:layout="@layout/fragment_inventory"
-                android:layout_margin="3dp"/>
+                android:layout_margin="3dp"
+                tools:layout="@layout/fragment_inventory" />
 
         </FrameLayout>
 
@@ -308,6 +326,8 @@
         android:layout_height="32dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mid_panel"></LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

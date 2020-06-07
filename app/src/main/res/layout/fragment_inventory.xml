@@ -38,7 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="button1Click"
-                android:src="@drawable/knopcka_ispolzovat" />
+                android:src="@drawable/bill"
+                android:background="#0f2a3f"/>
 
         </LinearLayout>
 
