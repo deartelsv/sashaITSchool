@@ -5,9 +5,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Application;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -99,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
 
     ScrollView scrollView;
 
+    MediaPlayer mp;
+    View viewMap;
+
     Integer chapter;
     int curChapterCount;
     final int chapterCount_1 = 20; //меняй эти числа, в зависимости от кол-ва квестов в главе.
@@ -133,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
         initQuestLoader();
         initFonts();
         initChapters();
+        initMediaPlayer();
 
         updateStats();
     }
@@ -376,6 +382,19 @@ public class MainActivity extends AppCompatActivity {
         shopTextInfo.setTypeface(type);
         shopTextDesc.setTypeface(type);
     }
+
+    private void initMediaPlayer(){
+        viewMap = findViewById(R.id.view_map);
+        mp = MediaPlayer.create(this, R.raw.music1);
+        mp.start();
+        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.reset();
+                mp.start();
+            }
+        });
+    }
     //
     //inGame
     private void updateStats(){
@@ -409,6 +428,7 @@ public class MainActivity extends AppCompatActivity {
                     progressTimer.setProgress(0);
                     curChapterCount = chapterCount_2;
                     progressTimer.setMax(curChapterCount);
+                    viewMap.setBackground(getDrawable(R.drawable.map_glava2));
                 }
 
                 curQuest.getEffects()[0].EffectCast(hero);
@@ -432,6 +452,7 @@ public class MainActivity extends AppCompatActivity {
                     progressTimer.setProgress(0);
                     curChapterCount = chapterCount_2;
                     progressTimer.setMax(curChapterCount);
+                    viewMap.setBackground(getDrawable(R.drawable.map_glava2));
                 }
 
                 curQuest.getEffects()[1].EffectCast(hero);
@@ -454,6 +475,7 @@ public class MainActivity extends AppCompatActivity {
                     progressTimer.setProgress(0);
                     curChapterCount = chapterCount_2;
                     progressTimer.setMax(curChapterCount);
+                    viewMap.setBackground(getDrawable(R.drawable.map_glava2));
                 }
 
                 curQuest.getEffects()[2].EffectCast(hero);
@@ -474,6 +496,7 @@ public class MainActivity extends AppCompatActivity {
                     progressTimer.setProgress(0);
                     curChapterCount = chapterCount_2;
                     progressTimer.setMax(curChapterCount);
+                    viewMap.setBackground(getDrawable(R.drawable.map_glava2));
                 }
 
                 curQuest.getEffects()[3].EffectCast(hero);
