@@ -21,9 +21,9 @@ public class Effect {
         this.extraEffectType = extraEffectType;
     }
 
-    public Effect(Integer power, Integer extraEffectType) {
+    public Effect(Integer power, Integer effectType) {
         this.power = power;
-        this.extraEffectType = extraEffectType;
+        this.effectType = effectType;
     }
 
     public Effect(String name, Integer power, Integer effectType, Integer extraEffectType) {

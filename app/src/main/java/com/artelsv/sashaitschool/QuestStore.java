@@ -77,7 +77,7 @@ public class QuestStore {
         int[] drawables5 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Сбежать", "-К сожалению вы расстроили нашего статного мужчину и теперь не увидите его никогда. Продолжайте свой путь", 1, strings4, effects4, nextQuests4, drawables5));
 
-        String[] strings5 = {"Гордо уйти", "", "", ""}; //5
+        String[] strings5 = {"Гордо уйти", "", "", ""}; //5 e
         Effect[] effects5 = {new Effect("money", -hero.getMoney(), 2), nothing, nothing, nothing};
         Integer[] nextQuests5 = {7, 7, 7, 7};
         int[] drawables6 = {drawables[1], drawables[1], drawables[1], drawables[1]};
@@ -89,8 +89,8 @@ public class QuestStore {
         int[] drawables7 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Драться", "-Вы стоите перед разбойниками и вам ничего не остается, кроме того, что бы применить один из 3 секретных приемов. Делайте выбор с умом.", 3, strings6, effects6, nextQuests6, drawables7));
 
-        String[] strings7 = {"Дальше", "", "", ""}; //7
-        Effect[] effects7 = {nothing, nothing, nothing, nothing};
+        String[] strings7 = {"Дальше", "", "", ""}; //7 e
+        Effect[] effects7 = {new Effect(10,2), nothing, nothing, nothing};
         Integer[] nextQuests7 = {10, 7, 7, 7};
         int[] drawables8 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Секретный прием №1", "-\"Потянув ручки в свой огромный мешок, вы достаете маленький столовый нож. Увидев это, разбойники начали визжать, отдавая все что у них есть.\"", 1, strings7, effects7, nextQuests7, drawables8));
@@ -149,6 +149,12 @@ public class QuestStore {
         Effect[] effects16= {nothing, nothing, nothing, nothing};
         Integer[] nextQuests16 = {7, 7, 7, 7};
         int[] drawables17= {drawables[1], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Смерть от падения", "-Внезапно вы спотыкаетесь \n С помощью своих навыков равновесия вы:", 1, strings16, effects16, nextQuests16, drawables17));
+
+        String[] strings17 = {"Дальше", "", "", ""}; //16
+        Effect[] effects17= {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests17 = {7, 7, 7, 7};
+        int[] drawables18= {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Смерть от падения", "-Внезапно вы спотыкаетесь \n С помощью своих навыков равновесия вы:", 1, strings16, effects16, nextQuests16, drawables17));
 
 
