@@ -176,7 +176,7 @@ public class QuestStore {
 
         //ПОБОЧНЫЙ КВЕСТ
         String[] strings18 = {"Отдых", "Путь", "", ""}; //18
-        Effect[] effects18= {nothing, nothing, nothing, nothing};
+        Effect[] effects18= {new Effect(1,7), nothing, nothing, nothing};
         Integer[] nextQuests18 = {19, 7, 7, 7};
         int[] drawables19= {drawables[0], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Путь", "-Продолжение пути", 2, strings18, effects18, nextQuests18, drawables19));
