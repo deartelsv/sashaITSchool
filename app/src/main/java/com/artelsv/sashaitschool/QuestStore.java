@@ -46,6 +46,7 @@ public class QuestStore {
 
         //НАЧАЛО
 
+
         String[] strings = {"В путь!", "", "", ""};
         Effect[] effects = {new Effect("nothing", 0, 2), new Effect("nothing", 0, 2), new Effect("nothing", 0, 2), new Effect("nothing", 0, 2)};
         Integer[] nextQuests = {1, 1, 1, 1};
@@ -53,10 +54,11 @@ public class QuestStore {
         quests.add(new Quest("ГЛАВА 1.", " - Не раздумывая главный герой достает свой походный мешок, который завалялся в самом темном уголке. Кладет туда карту, отмеченную ярко красным крестом. Горсть медных монет и столовый нож, чтобы отбиваться от злостных похитителей.\n" +
                 "Присев на дорожку и вспомнив все то что с ним происходило в жизни, мысленно резко перечеркнул все, вздохнул и отправился в путь.", 1, 1, strings, effects, nextQuests, drawables1));
 
+        //1 КВЕСТ
         //Высокий статный мужчина
         String[] strings1 = {"Согласиться", "Отказаться", "Пройти мимо", "Стукнуть его"};
         Effect[] effects1 = {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests1 = {2, 13, 2, 2};
+        Integer[] nextQuests1 = {2, 13, 14, 16};
         int[] drawables2 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Высокий статный мужчина в пальто", "- \"Откуда не возьмись перед вами появлятся загадочный мужчина.  \"Здраствствуй, путник, меня называют высоким статным мужчиной в пальто! Если выполнишь мою просьбу,то в замен предлжу тебе что-то интересное\" - говорит он.", 4, 1, strings1, effects1,nextQuests1, drawables2));
 
@@ -79,16 +81,16 @@ public class QuestStore {
         quests.add(new Quest("Разборка с разбойниками", "-Указав мне путь я смирно пошел выполнять обещянное. Не прошло и 10 минут как я добрался до разбойников", 3, strings3, effects3, nextQuests3, drawables4));
 
         //побег
-        String[] strings4 = {"Побег", "", "", ""}; //4
+        String[] strings4 = {"Продолжить путь", "", "", ""}; //4
         Effect[] effects4 = {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests4 = {7, 7, 7, 7};
+        Integer[] nextQuests4 = {18, 7, 7, 7};
         int[] drawables5 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Сбежать", "-К сожалению вы расстроили нашего статного мужчину и теперь не увидите его никогда. Продолжайте свой путь", 1, strings4, effects4, nextQuests4, drawables5));
 
         //Отдать монеты
         String[] strings5 = {"Гордо уйти", "", "", ""}; //5 e
         Effect[] effects5 = {new Effect("money", -hero.getMoney(), 2), nothing, nothing, nothing};
-        Integer[] nextQuests5 = {7, 7, 7, 7};
+        Integer[] nextQuests5 = {18, 7, 7, 7};
         int[] drawables6 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Отдать деньги", "-Отдав все монеты, вы гордо подняв голову, продолжили свой путь", 1, strings5, effects5, nextQuests5, drawables6));
 
@@ -136,8 +138,8 @@ public class QuestStore {
         int[] drawables13 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Смерть из-за палок", "-К сожалению ваш персонаж погиб из-за гнусных воров. Конец игры.", 1, strings12, effects12, nextQuests12, drawables13));
 
-        //Отказать статному мужчине
 
+        //Отказать статному мужчине
         String[] strings13 = {"Продолжить путь", "", "", ""}; //13
         Effect[] effects13 = {nothing, nothing, nothing, nothing};
         Integer[] nextQuests13 = {18, 7, 7, 7};
@@ -145,7 +147,7 @@ public class QuestStore {
         quests.add(new Quest("Отказ в просьбе", "-Статный мужчин пожав плечами произнес \"Жизнь дана на добрые дела, прощай путник\" и внезапно исчезает. А я продолжаю свою дорогу.", 1, strings13, effects13, nextQuests13, drawables14));
 
         //Пройти мимо статного мужчины
-        String[] strings14 = {"Игнорировать", "", "", ""}; //14
+        String[] strings14 = {"Продолижть путь", "", "", ""}; //14
         Effect[] effects14 = {nothing, nothing, nothing, nothing};
         Integer[] nextQuests14 = {18, 7, 7, 7};
         int[] drawables15 = {drawables[1], drawables[1], drawables[1], drawables[1]};
@@ -167,8 +169,8 @@ public class QuestStore {
 
         //СМЕРТЬ
         String[] strings17 = {"Начать заново", "", "", ""}; //17
-        Effect[] effects17= {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests17 = {7, 7, 7, 7};
+        Effect[] effects17= {new Effect(1, 6), nothing, nothing, nothing, nothing, nothing, nothing};
+        Integer[] nextQuests17 = {0, 0, 0, 0};
         int[] drawables18= {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Смерть", "-Конец игры", 1, strings17, effects17, nextQuests17, drawables18));
 
@@ -177,7 +179,36 @@ public class QuestStore {
         Effect[] effects18= {nothing, nothing, nothing, nothing};
         Integer[] nextQuests18 = {19, 7, 7, 7};
         int[] drawables19= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Путь", "-Продолжение пути", 1, strings18, effects18, nextQuests18, drawables19));
+        quests.add(new Quest("Путь", "-Продолжение пути", 2, strings18, effects18, nextQuests18, drawables19));
+
+        String[] strings19= {"В Путь", "", "", ""}; //19
+        Effect[] effects19= {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests19 = {20, 7, 7, 7};
+        int[] drawables20= {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Путь", "-Вы Продолжайте путь", 1, strings19, effects19, nextQuests19, drawables20));
+
+
+        //2 КВЕСТ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
 
