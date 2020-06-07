@@ -157,7 +157,11 @@ public class QuestStore {
         int[] drawables18= {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Смерть от падения", "-Внезапно вы спотыкаетесь \n С помощью своих навыков равновесия вы:", 1, strings16, effects16, nextQuests16, drawables17));
 
-
+        String[] strings50 = {"Дальше", "", "", ""}; //16
+        Effect[] effects50= {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests50 = {7, 7, 7, 7};
+        int[] drawables51= {drawables[1], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Смерть", "-Внезапно вы спотыкаетесь \n С помощью своих навыков равновесия вы:", 1, strings16, effects16, nextQuests16, drawables17));
     }
 }
 

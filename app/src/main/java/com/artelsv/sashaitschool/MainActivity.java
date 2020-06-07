@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initHero(){
-        hero = new Hero("Adventure", "тест", 10, 10, 1, 1);
+        hero = new Hero("Adventure", "тест", 10, 100, 1, 1);
     }
 
     private void initEffects(){
