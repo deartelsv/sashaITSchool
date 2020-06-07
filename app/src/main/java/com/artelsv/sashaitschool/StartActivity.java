@@ -124,7 +124,7 @@ public class StartActivity extends AppCompatActivity {
         startText.setAnimation(out);
         //startText.setAlpha(0f);
         if (test == false) {
-            startText.setText("any click");
+            startText.setText("ГАТЬ");
         }
 //        Intent intent = new Intent(this, MainActivity.class);
 //        startActivity(intent);
