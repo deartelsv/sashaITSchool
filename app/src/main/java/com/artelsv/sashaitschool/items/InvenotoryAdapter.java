@@ -34,6 +34,14 @@ public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.In
         notifyDataSetChanged();
     }
 
+    public void removeAt(int position) {
+//     items.remove(position);
+//        notifyItemRemoved(position);
+//        notifyItemRangeChanged(position, items.size());
+        items.remove(position);
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public InventoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

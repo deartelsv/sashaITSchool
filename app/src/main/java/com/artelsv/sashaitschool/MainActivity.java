@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
     View inventoryFrag;
     View shopFrag;
         //Fragments views
-        Integer selectedItem;
-        Integer shopSelectedItem;
+        Integer selectedItem = -1;
+        Integer shopSelectedItem = -1;
 
         ImageButton sellItem;
 
@@ -124,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
         initEvents();
         initQuestLoader();
         initFonts();
+
+        updateStats();
     }
 
     @Override
@@ -195,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
         //init shop items
         storeItems = new ArrayList<>();
-        storeItems.add(new Item("Money Potion", "Выпейте, и в кармане станет на 2 монеты больше", 3, 1, new Effect("moneyinc", 2, 2), getDrawable(R.drawable.slot), false));
+        storeItems.add(new Item("Money Potion", "Выпейте, и в кармане станет на 2 монеты больше", 5, 1, new Effect("moneyinc", 2, 2), getDrawable(R.drawable.slot), false));
     }
 
     private void initHideButtonsBar(){
@@ -224,8 +226,8 @@ public class MainActivity extends AppCompatActivity {
         textPower = findViewById(R.id.textPower);
 
         //inventory fragment
-        ifItemDesc = findViewById(R.id.textView3);
-        ifItemName = findViewById(R.id.textView4);
+        ifItemName = findViewById(R.id.textView3);
+        ifItemDesc = findViewById(R.id.textView4);
         sellItem = findViewById(R.id.sellButton);
     }
 
@@ -280,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
                 shopTextName.setText(storeItems.get(position).getName());
                 shopTextDesc.setText(storeItems.get(position).getDesc());
                 shopSelectedItem = position;
-
+                Log.e("test1", shopSelectedItem.toString() + ia_2.getItems().get(shopSelectedItem).getPrice().toString());
 
 
 
@@ -439,7 +441,12 @@ public class MainActivity extends AppCompatActivity {
                 inventoryFrag.setVisibility(View.VISIBLE);
                 break;
             case R.id.sellButton:
-                ia.removeAt(selectedItem, getDrawable(R.drawable.slot));
+                if (selectedItem >= 0) {
+                    ia.removeAt(selectedItem);
+                } else {
+                    ifItemName.setText("");
+                    ifItemDesc.setText("Прежде выберите предмет!");
+                }
                 Log.e("test","sellButton");
                 break;
             case R.id.useItemButton:
@@ -448,11 +455,29 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("test", "test");
                 break;
             case R.id.shop_btnBuyItem:
-                if (shopSelectedItem >= 0){
+
+                if ((shopSelectedItem >= 0) && (ia_2.getItems().get(shopSelectedItem).getPrice() <= hero.getMoney())){
+                    int change = (hero.getMoney())-(ia_2.getItems().get(shopSelectedItem).getPrice());
+                    hero.setMoney(change);
+
                     items.add(storeItems.get(shopSelectedItem));
-                    storeItems.remove(shopSelectedItem);
+                    ia_2.removeAt(shopSelectedItem);
                     updateInvAndStore();
+//                    Effect effect = new Effect("dm", -(ia_2.getItems().get(shopSelectedItem).getPrice()),2);
+//                    effect.EffectCast(hero);
+
+                    shopTextName.setText("");
+                    shopTextDesc.setText("Предмет куплен!");
+                } else if (shopSelectedItem < 0) {
+                    shopTextName.setText("");
+                    shopTextDesc.setText("Прежде выберите предмет!");
+                } else if (ia_2.getItems().get(shopSelectedItem).getPrice() > hero.getMoney()) {
+                    shopTextName.setText("");
+                    shopTextDesc.setText("У вас недостаточно денег!");
                 }
+
+                updateStats();
+                shopSelectedItem = -1;
                 break;
 
         }
