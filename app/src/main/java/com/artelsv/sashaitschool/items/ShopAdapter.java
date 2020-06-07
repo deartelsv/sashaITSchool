@@ -61,6 +61,11 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         return items.size();
     }
 
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+        notifyDataSetChanged();
+    }
+
     class ShopViewHolder extends RecyclerView.ViewHolder {
         //item vars
         ImageView itemImage;

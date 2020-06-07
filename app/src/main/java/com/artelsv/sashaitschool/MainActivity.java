@@ -24,6 +24,7 @@ import com.artelsv.sashaitschool.creatures.effects.EffectsStore;
 import com.artelsv.sashaitschool.items.InvenotoryAdapter;
 import com.artelsv.sashaitschool.items.Item;
 import com.artelsv.sashaitschool.items.ItemsStore;
+import com.artelsv.sashaitschool.items.ShopAdapter;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -65,10 +66,11 @@ public class MainActivity extends AppCompatActivity {
     //Shop
     RecyclerView shop_store;
     LinearLayoutManager gm_2;
-    InvenotoryAdapter ia_2;
+    ShopAdapter ia_2;
 
     //all items and effects
     ArrayList<Item> items;
+    ArrayList<Item> storeItems;
     ArrayList<Effect> effects;
     //
     //Fragments (это крч кастыль. Можно было умнее сделать. Но так проще)
@@ -76,12 +78,17 @@ public class MainActivity extends AppCompatActivity {
     View shopFrag;
         //Fragments views
         Integer selectedItem;
+        Integer shopSelectedItem;
 
         ImageButton sellItem;
 
         TextView ifItemName;
         TextView ifItemDesc;
         TextView ifInvInfo;
+
+        TextView shopTextName;
+        TextView shopTextDesc;
+        TextView shopTextInfo;
     //Quest shit
     QuestLoader questLoader;
     QuestStore questStore;
@@ -165,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initItems(){ // Загрузка итемов
+        //init inv items
         items = new ArrayList<Item>();
 
         Item newItem;
@@ -184,6 +192,10 @@ public class MainActivity extends AppCompatActivity {
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head),false));
+
+        //init shop items
+        storeItems = new ArrayList<>();
+        storeItems.add(new Item("Money Potion", "Выпейте, и в кармане станет на 2 монеты больше", 3, 1, new Effect("moneyinc", 2, 2), getDrawable(R.drawable.slot), false));
     }
 
     private void initHideButtonsBar(){
@@ -225,6 +237,9 @@ public class MainActivity extends AppCompatActivity {
         ia = new InvenotoryAdapter(items);
         inventory_store.setAdapter(ia);
 
+        ifInvInfo = findViewById(R.id.invItemInfo);
+        statsInfo = findViewById(R.id.textStats);
+
         inventory_store.addOnItemTouchListener(new RecyclerTouchListener(this, inventory_store, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
@@ -249,20 +264,22 @@ public class MainActivity extends AppCompatActivity {
         gm_2 = new GridLayoutManager(this,2);
         shop_store.setLayoutManager(gm_2);
         shop_store.setHasFixedSize(true);
-        ia_2 = new InvenotoryAdapter(items);
+        ia_2 = new ShopAdapter(storeItems);
         shop_store.setAdapter(ia_2);
 
-        ifInvInfo = findViewById(R.id.invItemInfo);
-        statsInfo = findViewById(R.id.textStats);
+        shopTextDesc = findViewById(R.id.shop_tvItemDesc);
+        shopTextName = findViewById(R.id.shop_tvItemName);
+        shopTextInfo = findViewById(R.id.textView2);
+
 
         shop_store.addOnItemTouchListener(new RecyclerTouchListener(this, shop_store, new RecyclerTouchListener.ClickListener() {
             @Override
             public void onClick(View view, int position) {
                 Log.e("test", String.valueOf(position));
-                Log.e("test", items.get(position).toString());
-                ifItemName.setText(items.get(position).getName());
-                ifItemDesc.setText(items.get(position).getDesc());
-                selectedItem = position;
+                Log.e("test", storeItems.get(position).toString());
+                shopTextName.setText(storeItems.get(position).getName());
+                shopTextDesc.setText(storeItems.get(position).getDesc());
+                shopSelectedItem = position;
 
 
 
@@ -318,6 +335,9 @@ public class MainActivity extends AppCompatActivity {
         button4.setTypeface(type);
         ifInvInfo.setTypeface(type);
         statsInfo.setTypeface(type);
+        shopTextName.setTypeface(type);
+        shopTextInfo.setTypeface(type);
+        shopTextDesc.setTypeface(type);
     }
     //
     //inGame
@@ -327,6 +347,11 @@ public class MainActivity extends AppCompatActivity {
         textHp.setText(hero.getHp().toString());
     }
     //
+
+    private void updateInvAndStore(){
+        ia.setItems(items);
+        ia_2.setItems(storeItems);
+    }
 
     //click listener
     public void button1Click(View view) { // чекаем нажатие кнопок
@@ -421,6 +446,14 @@ public class MainActivity extends AppCompatActivity {
                 ia.selected_item = selectedItem;
 
                 Log.e("test", "test");
+                break;
+            case R.id.shop_btnBuyItem:
+                if (shopSelectedItem >= 0){
+                    items.add(storeItems.get(shopSelectedItem));
+                    storeItems.remove(shopSelectedItem);
+                    updateInvAndStore();
+                }
+                break;
 
         }
 

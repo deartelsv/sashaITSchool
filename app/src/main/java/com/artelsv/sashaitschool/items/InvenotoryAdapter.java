@@ -64,6 +64,11 @@ public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.In
         return items.size();
     }
 
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+        notifyDataSetChanged();
+    }
+
     class InventoryViewHolder extends RecyclerView.ViewHolder {
         //item vars
         ImageView itemImage;

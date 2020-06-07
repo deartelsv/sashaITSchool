@@ -108,10 +108,12 @@
                     android:layout_marginStart="29dp"
                     android:layout_marginEnd="29dp"
                     android:background="@drawable/knopcka_cupit"
+                    android:contentDescription=".MainActivity"
                     android:text="SasuJopu"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:onClick="button1Click"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
