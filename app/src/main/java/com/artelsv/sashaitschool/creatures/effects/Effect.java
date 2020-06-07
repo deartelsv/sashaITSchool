@@ -46,7 +46,7 @@ public class Effect {
         // 6 - рестарт игры
         // 7 - восстановление хп до нач.значения
 
-        switch (effectType){
+        switch (effectType){ //Основной эффект
             case 1:
                 creature.hpRegen(power);
                 break;
@@ -68,7 +68,7 @@ public class Effect {
                 creature.rest();
         }
 
-        if (extraEffectType != 0) {
+        if (extraEffectType != 0) { //доп.эффекты
             switch (extraEffectType) {
                 case 1:
                     creature.hpRegen(extraPower);

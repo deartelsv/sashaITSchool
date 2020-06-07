@@ -16,7 +16,7 @@ public class StartActivity extends AppCompatActivity {
     private int currentApiVersion;
 
     @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
+    public void onWindowFocusChanged(boolean hasFocus) { //Скрытие копок,возможность достать
         super.onWindowFocusChanged(hasFocus);
         if (currentApiVersion >= Build.VERSION_CODES.KITKAT && hasFocus) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
@@ -26,7 +26,7 @@ public class StartActivity extends AppCompatActivity {
         }
     }
 
-    private void initHideButtonsBar(){
+    private void initHideButtonsBar(){  //Скрытие кнопок телефона
         currentApiVersion = android.os.Build.VERSION.SDK_INT;
         final int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
                 View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
@@ -44,11 +44,11 @@ public class StartActivity extends AppCompatActivity {
                 }
             });
         }
-    } // НЕТРОГАТЬ БЛЯТЬ
+    } // НЕТРОГАТЬ
 
     TextView startText;
 
-    final Animation in = new AlphaAnimation(0.0f, 1.0f);
+    final Animation in = new AlphaAnimation(0.0f, 1.0f); //Анимация букав свет-в тень
     final Animation out = new AlphaAnimation(1.0f, 0.0f);
 
     Boolean test;
@@ -78,7 +78,7 @@ public class StartActivity extends AppCompatActivity {
 //        startActivity(intent);
     }
 
-    public void startActiveClick(View view){
+    public void startActiveClick(View view){ //Обработчик нажатий на активность
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
@@ -89,7 +89,7 @@ public class StartActivity extends AppCompatActivity {
             skip();
         }
 
-        in.setDuration(3000);
+        in.setDuration(3000);// длительность появления и исчезания текста
 
 
         out.setDuration(3000);
@@ -130,7 +130,7 @@ public class StartActivity extends AppCompatActivity {
 //        startActivity(intent);
     }
 
-    private void skip(){
+    private void skip(){ //След.активность
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
