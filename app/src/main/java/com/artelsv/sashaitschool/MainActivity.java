@@ -322,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQuestLoader(){
-        int[] drawables = {R.drawable.koster_main, R.drawable.podlojka, R.drawable.map_glava1, R.drawable.map_glava2, R.drawable.map_glava3, R.drawable.map_glava4};
+        int[] drawables = {R.drawable.koster_main, R.drawable.pustok, R.drawable.map_glava1, R.drawable.map_glava2, R.drawable.map_glava3, R.drawable.map_glava4};
         gifImageView = findViewById(R.id.gifImageView);
 
         questLoader = new QuestLoader(textView, button1, button2, button3, button4);
