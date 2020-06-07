@@ -149,7 +149,7 @@ public class QuestStore {
         //Пройти мимо статного мужчины
         String[] strings14 = {"Продолижть путь", "", "", ""}; //14
         Effect[] effects14 = {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests14 = {18, 7, 7, 7};
+        Integer[] nextQuests14 = {15, 7, 7, 7};
         int[] drawables15 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Пройти мимо", "-Вы просто проходите мимо не обращая внимания", 1, strings14, effects14, nextQuests14, drawables15));
 
@@ -179,7 +179,7 @@ public class QuestStore {
         Effect[] effects18= {new Effect(1,7), nothing, nothing, nothing};
         Integer[] nextQuests18 = {19, 7, 7, 7};
         int[] drawables19= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Путь", "-Продолжение пути", 2, strings18, effects18, nextQuests18, drawables19));
+        quests.add(new Quest("Путь", "-Ds ", 2, strings18, effects18, nextQuests18, drawables19));
 
         String[] strings19= {"В Путь", "", "", ""}; //19
         Effect[] effects19= {nothing, nothing, nothing, nothing};
