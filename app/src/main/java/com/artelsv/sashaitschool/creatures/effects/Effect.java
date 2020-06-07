@@ -66,6 +66,8 @@ public class Effect {
                 creature.restart();
             case 7:
                 creature.rest();
+            case 8:
+                System.exit(1);
         }
 
         if (extraEffectType != 0) { //доп.эффекты
@@ -89,6 +91,8 @@ public class Effect {
                     creature.restart();
                 case 7:
                     creature.rest();
+                case 8:
+                    System.exit(1);
             }
         }
     }
