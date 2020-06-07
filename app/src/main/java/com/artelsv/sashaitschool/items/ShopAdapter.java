@@ -32,6 +32,14 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         notifyDataSetChanged();
     }
 
+    public void removeAt(int position) {
+//        items.remove(position);
+//        notifyItemRemoved(position);
+//        notifyItemRangeChanged(position, items.size());
+        items.remove(position);
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ShopAdapter.ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -64,6 +72,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     public void setItems(ArrayList<Item> items) {
         this.items = items;
         notifyDataSetChanged();
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
     }
 
     class ShopViewHolder extends RecyclerView.ViewHolder {
