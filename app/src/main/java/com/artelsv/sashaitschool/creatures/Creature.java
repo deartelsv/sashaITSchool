@@ -39,6 +39,12 @@ public class Creature {
         protection = protection + value;
     }
 
+    public void restart(){
+        hp = 100;
+        money = 10;
+        power = 1;
+    }
+
     public String toString(){
         return ("\nname = " + this.name +
                 "\ndesc = " + this.description +

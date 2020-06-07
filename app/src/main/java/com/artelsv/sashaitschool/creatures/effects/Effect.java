@@ -7,6 +7,7 @@ public class Effect {
     private String name;
     private Integer power;
     private Integer effectType;
+    private Integer extraPower;
     private Integer extraEffectType = 0;
 
     public Effect(String name, Integer power, Integer effectType) {
@@ -15,8 +16,9 @@ public class Effect {
         this.effectType = effectType;
     }
 
-    public Effect(Integer power, Integer effectType, Integer extraEffectType) {
+    public Effect(Integer power, Integer extraPower, Integer effectType, Integer extraEffectType) {
         this.power = power;
+        this.extraPower = extraPower;
         this.effectType = effectType;
         this.extraEffectType = extraEffectType;
     }
@@ -26,10 +28,11 @@ public class Effect {
         this.effectType = effectType;
     }
 
-    public Effect(String name, Integer power, Integer effectType, Integer extraEffectType) {
+    public Effect(String name, Integer power, Integer extraPower, Integer effectType, Integer extraEffectType) {
         this.name = name;
         this.power = power;
         this.effectType = effectType;
+        this.extraPower = extraPower;
         this.extraEffectType = extraEffectType;
     }
 
@@ -57,25 +60,29 @@ public class Effect {
             case 5:
                 creature.protectionInc(power);
                 break;
+            case 6:
+                creature.restart();
         }
 
         if (extraEffectType != 0) {
             switch (extraEffectType) {
                 case 1:
-                    creature.hpRegen(power);
+                    creature.hpRegen(extraPower);
                     break;
                 case 2:
-                    creature.moneyInc(power);
+                    creature.moneyInc(extraPower);
                     break;
                 case 3:
-                    creature.damage(power);
+                    creature.damage(extraPower);
                     break;
                 case 4:
-                    creature.powerInc(power);
+                    creature.powerInc(extraPower);
                     break;
                 case 5:
-                    creature.protectionInc(power);
+                    creature.protectionInc(extraPower);
                     break;
+                case 6:
+                    creature.restart();
             }
         }
     }
