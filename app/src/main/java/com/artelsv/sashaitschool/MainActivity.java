@@ -99,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
 
     ScrollView scrollView;
 
+    Integer chapter;
+    int curChapterCount;
+    final int chapterCount_1 = 20; //меняй эти числа, в зависимости от кол-ва квестов в главе.
+    final int chapterCount_2 = 20;
+
     private int currentApiVersion;
 
     @Override
@@ -127,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         initEvents();
         initQuestLoader();
         initFonts();
+        initChapters();
 
         updateStats();
     }
@@ -345,6 +351,12 @@ public class MainActivity extends AppCompatActivity {
         button4 = findViewById(R.id.button4);
     }
 
+    private void initChapters(){
+        chapter = 1;
+        curChapterCount = chapterCount_1;
+        progressTimer.setMax(curChapterCount);
+    }
+
     private void initFonts(){
         Typeface type = Typeface.createFromAsset(getAssets(),"19190.ttf");
         textCoin.setTypeface(type);
@@ -391,8 +403,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 updateProgress();
-                if (progressTimer.getProgress() == 5){
+                if (progressTimer.getProgress() == curChapterCount){
                     textView.setText("");
+
+                    progressTimer.setProgress(0);
+                    curChapterCount = chapterCount_2;
+                    progressTimer.setMax(curChapterCount);
                 }
 
                 curQuest.getEffects()[0].EffectCast(hero);
@@ -410,8 +426,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 updateProgress();
-                if (progressTimer.getProgress() == 5){
+                if (progressTimer.getProgress() == curChapterCount){
                     textView.setText("");
+
+                    progressTimer.setProgress(0);
+                    curChapterCount = chapterCount_2;
+                    progressTimer.setMax(curChapterCount);
                 }
 
                 curQuest.getEffects()[1].EffectCast(hero);
@@ -428,8 +448,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 updateProgress();
-                if (progressTimer.getProgress() == 5){
+                if (progressTimer.getProgress() == curChapterCount){
                     textView.setText("");
+
+                    progressTimer.setProgress(0);
+                    curChapterCount = chapterCount_2;
+                    progressTimer.setMax(curChapterCount);
                 }
 
                 curQuest.getEffects()[2].EffectCast(hero);
@@ -444,8 +468,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 updateProgress();
-                if (progressTimer.getProgress() == 5){
+                if (progressTimer.getProgress() == curChapterCount){
                     textView.setText("");
+
+                    progressTimer.setProgress(0);
+                    curChapterCount = chapterCount_2;
+                    progressTimer.setMax(curChapterCount);
                 }
 
                 curQuest.getEffects()[3].EffectCast(hero);
