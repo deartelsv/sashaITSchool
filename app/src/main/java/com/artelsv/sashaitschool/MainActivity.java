@@ -386,14 +386,19 @@ public class MainActivity extends AppCompatActivity {
     private void initMediaPlayer(){
         viewMap = findViewById(R.id.view_map);
         mp = MediaPlayer.create(this, R.raw.music1);
+
+        //mp.prepareAsync();
+
+        mp.setLooping(true);
         mp.start();
-        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                mp.reset();
-                mp.start();
-            }
-        });
+
+//        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//            @Override
+//            public void onCompletion(MediaPlayer mp) {
+//                mp.reset();
+//                mp.start();
+//            }
+//        });
     }
     //
     //inGame
