@@ -62,6 +62,8 @@ public class Effect {
                 break;
             case 6:
                 creature.restart();
+            case 7:
+                creature.rest();
         }
 
         if (extraEffectType != 0) {
@@ -83,6 +85,8 @@ public class Effect {
                     break;
                 case 6:
                     creature.restart();
+                case 7:
+                    creature.rest();
             }
         }
     }

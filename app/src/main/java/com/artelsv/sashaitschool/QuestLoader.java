@@ -1,6 +1,8 @@
 package com.artelsv.sashaitschool;
 
+import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class QuestLoader {
@@ -9,14 +11,17 @@ public class QuestLoader {
     private Button button2;
     private Button button3;
     private Button button4;
+    private ScrollView scrollView;
 
-    public QuestLoader(TextView textView, Button button1, Button button2, Button button3, Button button4) {
+    public QuestLoader(TextView textView, Button button1, Button button2, Button button3, Button button4, ScrollView scrollView) {
         this.textView = textView;
 
         this.button1 = button1;
         this.button2 = button2;
         this.button3 = button3;
         this.button4 = button4;
+
+        this.scrollView = scrollView;
     }
 
     public void loadQuest(Quest quest) {
@@ -66,5 +71,7 @@ public class QuestLoader {
         button2.setText(quest.getAnswersText()[1]);
         button3.setText(quest.getAnswersText()[2]);
         button4.setText(quest.getAnswersText()[3]);
+
+        scrollView.fullScroll(View.FOCUS_DOWN);
     }
 }

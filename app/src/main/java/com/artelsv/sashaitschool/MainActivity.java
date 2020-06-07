@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.artelsv.sashaitschool.creatures.Hero;
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
     Quest curQuest;
 
     GifImageView gifImageView;
+
+    ScrollView scrollView;
 
     private int currentApiVersion;
 
@@ -324,8 +327,9 @@ public class MainActivity extends AppCompatActivity {
     private void initQuestLoader(){
         int[] drawables = {R.drawable.koster_main, R.drawable.pustok, R.drawable.map_glava1, R.drawable.map_glava2, R.drawable.map_glava3, R.drawable.map_glava4};
         gifImageView = findViewById(R.id.gifImageView);
+        scrollView = findViewById(R.id.event_textScroll);
 
-        questLoader = new QuestLoader(textView, button1, button2, button3, button4);
+        questLoader = new QuestLoader(textView, button1, button2, button3, button4, scrollView);
         questStore = new QuestStore(drawables, hero);
 
         questLoader.loadQuest(questStore.getQuests().get(0));
@@ -396,6 +400,7 @@ public class MainActivity extends AppCompatActivity {
                 gifImageView.setImageResource(curQuest.getDrawables()[0]);
                 questLoader.loadQuest(questStore.getQuests().get(curQuest.getNextQuestID()[0]));
                 curQuest = questStore.getQuests().get(curQuest.getNextQuestID()[0]);
+
                 break;
             case R.id.button2: // 2 Button 2
                 if (DEBUG) {

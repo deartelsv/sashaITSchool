@@ -45,6 +45,10 @@ public class Creature {
         power = 1;
     }
 
+    public void rest(){
+        hp = 100;
+    }
+
     public String toString(){
         return ("\nname = " + this.name +
                 "\ndesc = " + this.description +
