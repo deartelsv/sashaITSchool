@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         items = new ArrayList<Item>();
 
         Item newItem;
-        items.add(newItem = new Item("tew6", "Sasha tak soidet7", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
+        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head),false));

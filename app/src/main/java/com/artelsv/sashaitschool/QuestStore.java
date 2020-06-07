@@ -200,21 +200,21 @@ public class QuestStore {
         quests.add(new Quest("Дождливый день", "Ничто не предвещало беды. Была хорошая погода, бабочки летали птички пели. Но вдруг что-то капнуло на меня! И как из ведра полил дождь. Нужно было найти укрытие. Рядом со мной начинался лес и я пошел туда.", 1, strings20, effects20, nextQuests20, drawables21));
 
         //Встреча с рыцарем в покоцанных доспехах
-        String[] strings21= {"Заговорить", "Убежать", "", ""}; //2вар
+        String[] strings21= {"Заговорить", "Убежать", "", ""}; //21вар
         Effect[] effects21= {nothing, nothing, nothing, nothing};
         Integer[] nextQuests21 = {21, 7, 7, 7};
         int[] drawables22= {drawables[0], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Встреча с рыцарем в покоцанных доспехах", "Бродя по лесу я наткнулся небольшой домишко.Что ж выбора у меня не было и я зашел внутрь.В доме около затухающего камина, я увидел человека облаченного в доспехи.", 2, strings21, effects21, nextQuests21, drawables22));
 
         //Заговорить
-        String[] strings22= {"Согласиться", "Отказаться", "", ""}; //2вар
+        String[] strings22= {"Согласиться", "Отказаться", "", ""}; //22вар
         Effect[] effects22= {nothing, nothing, nothing, nothing};
         Integer[] nextQuests22 = {21, 7, 7, 7};
         int[] drawables23= {drawables[0], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Разговор с рыцарем", "Бродя по лесу я наткнулся небольшой домишко.Что ж выбора у меня не было и я зашел внутрь.В доме около затухающего камина, я увидел человека облаченного в доспехи.", 2, strings22, effects22, nextQuests22, drawables23));
 
         //Согласиться
-        String[] strings23= {"Согласиться", "Отказаться", "", ""}; //2вар
+        String[] strings23= {"Согласиться", "Отказаться", "", ""}; //23вар
         Effect[] effects23= {nothing, nothing, nothing, nothing};
         Integer[] nextQuests23 = {21, 7, 7, 7};
         int[] drawables24= {drawables[0], drawables[1], drawables[1], drawables[1]};
