@@ -15,6 +15,17 @@ public class Effect {
         this.effectType = effectType;
     }
 
+    public Effect(Integer power, Integer effectType, Integer extraEffectType) {
+        this.power = power;
+        this.effectType = effectType;
+        this.extraEffectType = extraEffectType;
+    }
+
+    public Effect(Integer power, Integer extraEffectType) {
+        this.power = power;
+        this.extraEffectType = extraEffectType;
+    }
+
     public Effect(String name, Integer power, Integer effectType, Integer extraEffectType) {
         this.name = name;
         this.power = power;

@@ -61,7 +61,7 @@ public class QuestLoader {
             button4.setAlpha(1f);
         }
 
-        textView.append(quest.getName()+"\n"+quest.getDescription()+"\n"+"---"+"\n");
+        textView.append(quest.getName()+"\n"+quest.getDescription()+"\n"+"\n---\n"+"\n");
         button1.setText(quest.getAnswersText()[0]);
         button2.setText(quest.getAnswersText()[1]);
         button3.setText(quest.getAnswersText()[2]);

@@ -77,6 +77,10 @@ public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.In
         notifyDataSetChanged();
     }
 
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
     class InventoryViewHolder extends RecyclerView.ViewHolder {
         //item vars
         ImageView itemImage;

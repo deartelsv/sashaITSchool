@@ -178,19 +178,7 @@ public class MainActivity extends AppCompatActivity {
         items = new ArrayList<Item>();
 
         Item newItem;
-        items.add(newItem = new Item("tew1", "t1es", 1, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew2", "t2es", 2, 0, effects.get(0), getDrawable(R.drawable.slot_chest), true));
-        items.add(newItem = new Item("tew3", "t3es", 3, 0, effects.get(0), getDrawable(R.drawable.slot_feet), true));
-        items.add(newItem = new Item("tew4", "4tes", 4, 0, effects.get(0), getDrawable(R.drawable.slot_mainhand), true));
-        items.add(newItem = new Item("tew5", "t5es", 5, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
         items.add(newItem = new Item("tew6", "Sasha tak soidet7", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
-        items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), true));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head), false));
         items.add(newItem = new Item("tew6", "t6es", 6, 0, effects.get(0), getDrawable(R.drawable.slot_head),false));
@@ -252,11 +240,21 @@ public class MainActivity extends AppCompatActivity {
                 selectedItem = position;
 
 
+
             }
 
             @Override
             public void onLongClick(View view, int position) {
-
+                if (ia.getItems().get(selectedItem).isEquip() == true){
+                    shopTextName.setText("");
+                    shopTextDesc.setText("Предмет одет!");
+                } else {
+                    ia.getItems().get(selectedItem).getEffect().EffectCast(hero);
+                    updateStats();
+                    ia.removeAt(selectedItem);
+                    ifItemName.setText("");
+                    ifItemDesc.setText("Предмет использован!");
+                }
             }
         }));
     }
@@ -290,7 +288,28 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onLongClick(View view, int position) {
+                if ((shopSelectedItem >= 0) && (ia_2.getItems().get(shopSelectedItem).getPrice() <= hero.getMoney())){
+                    int change = (hero.getMoney())-(ia_2.getItems().get(shopSelectedItem).getPrice());
+                    hero.setMoney(change);
 
+                    items.add(storeItems.get(shopSelectedItem));
+                    ia_2.removeAt(shopSelectedItem);
+                    updateInvAndStore();
+//                    Effect effect = new Effect("dm", -(ia_2.getItems().get(shopSelectedItem).getPrice()),2);
+//                    effect.EffectCast(hero);
+
+                    shopTextName.setText("");
+                    shopTextDesc.setText("Предмет куплен!");
+                } else if (shopSelectedItem < 0) {
+                    shopTextName.setText("");
+                    shopTextDesc.setText("Прежде выберите предмет!");
+                } else if (ia_2.getItems().get(shopSelectedItem).getPrice() > hero.getMoney()) {
+                    shopTextName.setText("");
+                    shopTextDesc.setText("У вас недостаточно денег!");
+                }
+
+                updateStats();
+                shopSelectedItem = -1;
             }
         }));
     }
@@ -303,7 +322,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQuestLoader(){
-        int[] drawables = {R.drawable.koster_main, R.drawable.podlojka};
+        int[] drawables = {R.drawable.koster_main, R.drawable.podlojka, R.drawable.map_glava1, R.drawable.map_glava2, R.drawable.map_glava3, R.drawable.map_glava4};
         gifImageView = findViewById(R.id.gifImageView);
 
         questLoader = new QuestLoader(textView, button1, button2, button3, button4);
@@ -443,6 +462,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sellButton:
                 if (selectedItem >= 0) {
                     ia.removeAt(selectedItem);
+                    ifItemName.setText("");
+                    ifItemDesc.setText("Предмет выброшен!");
                 } else {
                     ifItemName.setText("");
                     ifItemDesc.setText("Прежде выберите предмет!");
@@ -450,8 +471,22 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("test","sellButton");
                 break;
             case R.id.useItemButton:
-                ia.selected_item = selectedItem;
+                //ia.selected_item = selectedItem;
 
+                if (selectedItem >= 0){
+                    if (ia.getItems().get(selectedItem).isEquip() == true){
+                        shopTextName.setText("");
+                        shopTextDesc.setText("Предмет одет!");
+                    } else {
+                        ia.getItems().get(selectedItem).getEffect().EffectCast(hero);
+                        updateStats();
+                        ia.removeAt(selectedItem);
+                        shopTextName.setText("");
+                        shopTextDesc.setText("Предмет использован!");
+                    }
+                }
+
+                selectedItem = -1;
                 Log.e("test", "test");
                 break;
             case R.id.shop_btnBuyItem:

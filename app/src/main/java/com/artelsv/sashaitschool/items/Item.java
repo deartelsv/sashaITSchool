@@ -57,6 +57,10 @@ public class Item {
         return type;
     }
 
+    public boolean isEquip() {
+        return equip;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
