@@ -337,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initQuestLoader(){
-        int[] drawables = {R.drawable.koster_main, R.drawable.pustok, R.drawable.map_glava1, R.drawable.map_glava2, R.drawable.map_glava3, R.drawable.map_glava4};
+        int[] drawables = {R.drawable.koster_main, R.drawable.pustok};
         gifImageView = findViewById(R.id.gifImageView);
         scrollView = findViewById(R.id.event_textScroll);
 

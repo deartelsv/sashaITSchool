@@ -72,7 +72,6 @@ public class QuestStore {
                 "Прошу добрый путник, помоги мне вернуть его обратно, иначе жизнь моя прервратится в ничто. В замен я конечно как и обещал предложу кое-что интересное.", 1, strings2, effects2, nextQuests2, drawables3));
 
 
-
         //Разборка с разбойниками
         String[] strings3 = {"Сбежать", "Отдать деньги", "Сражаться", ""}; //3
         Effect[] effects3 = {nothing, nothing, nothing, nothing};
@@ -129,7 +128,7 @@ public class QuestStore {
         String[] strings11 = {"Дальше", "", "", ""}; //11
         Effect[] effects11 = {nothing, nothing, nothing, nothing};
         Integer[] nextQuests11 = {18, 7, 7, 7};
-        int[] drawables12 = {drawables[1], drawables[1], drawables[1], drawables[1]};
+        int[] drawables12 = {drawables[0], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Падение палки", "-Мы пошли с пустыми руками к статному мужчине и все ему рассказали. На что он пожалел нас и сказал, что с ним такое часто бывает. Затем вы попрощались.", 1, strings11, effects11, nextQuests11, drawables12));
 
         String[] strings12 = {"", "", "", ""}; //12
@@ -155,36 +154,36 @@ public class QuestStore {
 
         //Падение
         String[] strings15 = {"Продолжить путь", "", "", ""}; //15
-        Effect[] effects15= {new Effect(-5,1), nothing, nothing, nothing};
+        Effect[] effects15 = {new Effect(-5,1), nothing, nothing, nothing};
         Integer[] nextQuests15 = {18, 7, 7, 7};
-        int[] drawables16= {drawables[1], drawables[1], drawables[1], drawables[1]};
+        int[] drawables16 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Падения", "-Внезапно вы спотыкаетесь и получайте незначительный урон. Вот что делает с людьми невнимательность.", 1, strings15, effects15, nextQuests15, drawables16));
 
         //Неудачная битва
         String[] strings16 = {"Дальше", "", "", ""}; //16
-        Effect[] effects16= {nothing, nothing, nothing, nothing};
+        Effect[] effects16 = {nothing, nothing, nothing, nothing};
         Integer[] nextQuests16 = {18, 7, 7, 7};
-        int[] drawables17= {drawables[1], drawables[1], drawables[1], drawables[1]};
+        int[] drawables17 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Неудачная битва", "-Вы медленно достаете свое оружие из мешка и начинаете махать перед носом вашего оппонента. На что он странно смотрит на вас, разварачивается и уходит в даль. Вы стоите в недоумении несколько минут, а затем вновь продолжайте свой путь как-будто ничего и не было.", 1, strings16, effects16, nextQuests16, drawables17));
 
         //СМЕРТЬ
         String[] strings17 = {"Начать заново", "", "", ""}; //17
-        Effect[] effects17= {new Effect(1, 6), nothing, nothing, nothing, nothing, nothing, nothing};
+        Effect[] effects17 = {new Effect(1, 6), nothing, nothing, nothing, nothing, nothing, nothing};
         Integer[] nextQuests17 = {0, 0, 0, 0};
-        int[] drawables18= {drawables[1], drawables[1], drawables[1], drawables[1]};
+        int[] drawables18 = {drawables[1], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Смерть", "-Конец игры", 1, strings17, effects17, nextQuests17, drawables18));
 
         //ПОБОЧНЫЙ КВЕСТ
         String[] strings18 = {"Отдых", "Путь", "", ""}; //18
-        Effect[] effects18= {new Effect(1,7), nothing, nothing, nothing};
-        Integer[] nextQuests18 = {19, 7, 7, 7};
-        int[] drawables19= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Путь", "-Ds ", 2, strings18, effects18, nextQuests18, drawables19));
+        Effect[] effects18 = {new Effect(1,7), nothing, nothing, nothing};
+        Integer[] nextQuests18 = {19, 19, 7, 7};
+        int[] drawables19 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Путь", "-Восстановить силы или продолжить?! ", 2, strings18, effects18, nextQuests18, drawables19));
 
-        String[] strings19= {"В Путь", "", "", ""}; //19
-        Effect[] effects19= {nothing, nothing, nothing, nothing};
+        String[] strings19 = {"Дальше", "", "", ""}; //19
+        Effect[] effects19 = {nothing, nothing, nothing, nothing};
         Integer[] nextQuests19 = {20, 7, 7, 7};
-        int[] drawables20= {drawables[0], drawables[1], drawables[1], drawables[1]};
+        int[] drawables20 = {drawables[0], drawables[1], drawables[1], drawables[1]};
         quests.add(new Quest("Путь", "-Вы Продолжайте путь", 1, strings19, effects19, nextQuests19, drawables20));
 
 
@@ -193,40 +192,106 @@ public class QuestStore {
 
         //2 КВЕСТ
         //Дождливый день
-        String[] strings20= {"Дальше", "", "", ""}; //20
-        Effect[] effects20= {nothing, nothing, nothing, nothing};
+        String[] strings20 = {"Дальше", "", "", ""}; //20
+        Effect[] effects20 = {nothing, nothing, nothing, nothing};
         Integer[] nextQuests20 = {21, 7, 7, 7};
-        int[] drawables21= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Дождливый день", "Ничто не предвещало беды. Была хорошая погода, бабочки летали птички пели. Но вдруг что-то капнуло на меня! И как из ведра полил дождь. Нужно было найти укрытие. Рядом со мной начинался лес и я пошел туда.", 1, strings20, effects20, nextQuests20, drawables21));
+        int[] drawables21 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Дождливый день", "-Ничто не предвещало беды. Была хорошая погода, бабочки летали птички пели. Но вдруг что-то капнуло на меня! И как из ведра полил дождь. Нужно было найти укрытие. Рядом со мной начинался лес и я пошел туда.", 1, strings20, effects20, nextQuests20, drawables21));
 
         //Встреча с рыцарем в покоцанных доспехах
-        String[] strings21= {"Заговорить", "Убежать", "", ""}; //21вар
-        Effect[] effects21= {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests21 = {21, 7, 7, 7};
-        int[] drawables22= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Встреча с рыцарем в покоцанных доспехах", "Бродя по лесу я наткнулся небольшой домишко.Что ж выбора у меня не было и я зашел внутрь.В доме около затухающего камина, я увидел человека облаченного в доспехи.", 2, strings21, effects21, nextQuests21, drawables22));
+        String[] strings21 = {"Заговорить", "Убежать", "", ""}; //21
+        Effect[] effects21 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests21 = {22, 29, 7, 7};
+        int[] drawables22 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Встреча с рыцарем в покоцанных доспехах", "-Бродя по лесу я наткнулся небольшой домишко.Что ж выбора у меня не было и я зашел внутрь.В доме около затухающего камина, я увидел человека облаченного в доспехи.", 2, strings21, effects21, nextQuests21, drawables22));
 
         //Заговорить
-        String[] strings22= {"Согласиться", "Отказаться", "", ""}; //22вар
-        Effect[] effects22= {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests22 = {21, 7, 7, 7};
-        int[] drawables23= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Разговор с рыцарем", "Бродя по лесу я наткнулся небольшой домишко.Что ж выбора у меня не было и я зашел внутрь.В доме около затухающего камина, я увидел человека облаченного в доспехи.", 2, strings22, effects22, nextQuests22, drawables23));
+        String[] strings22 = {"Ожидание ответа", "", "", ""}; //22
+        Effect[] effects22 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests22 = {23, 7, 7, 7};
+        int[] drawables23 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Разговор с рыцарем", "-Посмотрев на него , я испытал какую-то жалость и печаль..\n" + "Небольшой разваливающийся дом в котором тихо тлел камин, а перед ним сидел так тяжко человек... Я поздаровался, но в ответ было лишь молчание..\n" +
+                "Но я не сдался и присев рядом с ним, я ждал, ждал того, что он заговорит.\n" + "Так и случилось, он рассказал свою историю -  историю о славной службе королю. Как тот сделал ему величественный подарок в знак его верности перед королевством, который рыцарь бережно прятал от других глаз. Но его предали и выкинули, как несчастную собаку из дома, а тот подарок так и остался спрятан от мира сего.\n" +
+                "\n" + "Услышав эту историю, я предложил ему свою помощь.\n.", 1, strings22, effects22, nextQuests22, drawables23));
 
-        //Согласиться
-        String[] strings23= {"Согласиться", "Отказаться", "", ""}; //23вар
-        Effect[] effects23= {nothing, nothing, nothing, nothing};
-        Integer[] nextQuests23 = {21, 7, 7, 7};
-        int[] drawables24= {drawables[0], drawables[1], drawables[1], drawables[1]};
-        quests.add(new Quest("Встреча с рыцарем в покоцанных доспехах", "Бродя по лесу я наткнулся небольшой домишко.Что ж выбора у меня не было и я зашел внутрь.В доме около затухающего камина, я увидел человека облаченного в доспехи.", 1, strings22, effects22, nextQuests22, drawables23));
+        //Успокоение
+        String[] strings23 = {"Отправляемся!", "", "", ""}; // 23
+        Effect[] effects23 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests23 = {24, 7, 7, 7};
+        int[] drawables24 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Успокоение", "-Повернувшись ко мне рыцарь, посмеялся и заплакал. А я сидевший рядом в недоумении лишь тихо побил его по плечу, как обычно это делал мне отец. \n" +
+                "Ранним утром, мы собрались и отправились к королевству, в котором служил наш рыцарь.\"", 1, strings23, effects23, nextQuests23, drawables24));
+
+        //Повозка
+        String[] strings24 = {"Помочь", "Пройти мимо", "", ""}; // 24
+        Effect[] effects24 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests24 = {25, 26, 7, 7};
+        int[] drawables25 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Повозка", "-Пошагивая с рыцарем по узкой тропинке, мы встретили тележку,что медленно тащил за собой человек", 2, strings24, effects24, nextQuests24, drawables25));
+
+        //Помочь
+        String[] strings25 = {"Дальше", "", "", ""}; // 25
+        Effect[] effects25 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests25 = {26, 7, 7, 7};
+        int[] drawables26 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Помощь", "-\"Рыцарь поглядел на меня и понял, что я собираюсь сделать.Хотел было меня уже обогнать, но я первый приуспел. Человек был несказанно рад, что мы решили ему помочь.\"", 1, strings25, effects25, nextQuests25, drawables26));
+
+        //Конец помощи человеку
+        String[] strings26 = {"Дальше", "", "", ""}; // 26 e
+        Effect[] effects26 = {new Effect(5,2), nothing, nothing, nothing};
+        Integer[] nextQuests26 = {27, 7, 7, 7};
+        int[] drawables27= {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Прибытие", "-\"Путь был достаточно небольшой и мы управились за пару часов. В благодарность , человек подкинул мне пару медняков, но я взял лишь половину из того, что он мне дал. Затем мы продожили путь, а дальше решили отдохнуть.", 1, strings26, effects26, nextQuests26, drawables27));
+
+
+        //Пройти мимо
+        String[] strings27 = {"Дальше", "", "", ""}; // 27
+        Effect[] effects27= {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests27 = {28, 7, 7, 7};
+        int[] drawables28 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("И что?", "-Не обращая внимания мы прошли мимо.\nВесь день мы шли, шли, бывало что сворачивали не туда и возращались. ", 1, strings27, effects27, nextQuests27, drawables28));
+
+        //Прибытие
+        String[] strings28 = {"Дальше", "", "", ""}; // 28
+        Effect[] effects28 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests28 = {30, 7, 7, 7};
+        int[] drawables29 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Окончание Пути с рыцарем", "-На следующий день мы прибыли в пункт назначения , но перед собой я увидел лишь развалены. Рыцарь поведал мне, что служил он около 15 лет назад. И после того, как его бросили на королевство напали соседние страны, разрушив его до самого основания.\n" +
+                "Он поблагодарил меня за то что я последовал за ним и расплатился со мной своим мечом. Мы попрощались и разошлись. ", 1, strings28, effects28, nextQuests28, drawables29));
 
 
 
 
+        //Встреча с рыцарем в покоцанных доспехах, УБЕЖАТЬ
+        String[] strings29 = {"В путь", "", "", ""}; // 29
+        Effect[] effects29 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests29 = {30, 26, 7, 7};
+        int[] drawables30 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Убежать", "-\"Резко развернувшись я пошел обратно к двери, медленно открыл ее и как дал деру, что пятки мои только сверкали.\n" +
+                "Сказать , что я не испугался - это не сказать ничего.\"\n" + "\"Мой путь так и продолжился по темному лесу пока не прекратился этот дряной дождь\".\n ", 1, strings29, effects29, nextQuests29, drawables30));
+
+        //ПОБОЧНЫЙ КВЕСТ
+        /*String[] strings30 = {"Отдых", "Путь", "", ""}; //30
+        Effect[] effects30 = {new Effect(1,7), nothing, nothing, nothing};
+        Integer[] nextQuests30 = {19, 7, 7, 7};
+        int[] drawables31 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Путь", "-Отдых хорош с едой! ", 2, strings30, effects30, nextQuests30, drawables31));
+
+        String[] strings31 = {"Дальше", "", "", ""}; //31
+        Effect[] effects31 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests31 = {20, 7, 7, 7};
+        int[] drawables32 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Путь", "-Вы Продолжайте путь", 1, strings31, effects31, nextQuests31, drawables32));
+*/
 
 
 
-
+        //3 КВЕСТ
+        String[] strings32 = {"Дальше", "", "", ""}; //32
+        Effect[] effects32 = {nothing, nothing, nothing, nothing};
+        Integer[] nextQuests32 = {20, 7, 7, 7};
+        int[] drawables33 = {drawables[0], drawables[1], drawables[1], drawables[1]};
+        quests.add(new Quest("Путь", "-Вы Продолжайте путь", 1, strings32, effects32, nextQuests32, drawables33));
 
 
 
