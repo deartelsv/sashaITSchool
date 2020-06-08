@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     Integer chapter;
     int curChapterCount;
-    final int chapterCount_1 = 50; //меняй эти числа, в зависимости от кол-ва квестов в главе.
+    final int chapterCount_1 = 28; //меняй эти числа, в зависимости от кол-ва квестов в главе.
     final int chapterCount_2 = 50;
 
     private int currentApiVersion;
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-    } // НЕТРОГАТЬ БЛЯТЬ
+    } // НЕТРОГАТЬ
 
     private void initFragmentTextViews(){
         textCoin = findViewById(R.id.textCoin);
