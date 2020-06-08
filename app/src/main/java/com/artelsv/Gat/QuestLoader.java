@@ -1,4 +1,4 @@
-package com.artelsv.sashaitschool;
+package com.artelsv.Gat;
 
 import android.view.View;
 import android.widget.Button;

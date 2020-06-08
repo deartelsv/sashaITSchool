@@ -1,9 +1,8 @@
-package com.artelsv.sashaitschool.items;
+package com.artelsv.Gat.items;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 
-import com.artelsv.sashaitschool.creatures.effects.Effect;
+import com.artelsv.Gat.creatures.effects.Effect;
 
 public class Item {
     private String name;

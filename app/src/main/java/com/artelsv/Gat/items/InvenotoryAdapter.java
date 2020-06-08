@@ -1,4 +1,4 @@
-package com.artelsv.sashaitschool.items;
+package com.artelsv.Gat.items;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -6,15 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.artelsv.sashaitschool.R;
+import com.artelsv.Gat.R;
 
 import java.util.ArrayList;
-import android.content.res.Resources;
 
 public class InvenotoryAdapter extends RecyclerView.Adapter<InvenotoryAdapter.InventoryViewHolder> {
 

@@ -1,4 +1,4 @@
-package com.artelsv.sashaitschool.creatures.effects;
+package com.artelsv.Gat.creatures.effects;
 
 import java.util.ArrayList;
 

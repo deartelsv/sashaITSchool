@@ -1,11 +1,7 @@
-package com.artelsv.sashaitschool.items;
+package com.artelsv.Gat.items;
 
-import android.media.Image;
+import com.artelsv.Gat.creatures.effects.Effect;
 
-import com.artelsv.sashaitschool.creatures.effects.Effect;
-
-import java.io.FileReader;
-import java.io.Reader;
 import java.util.ArrayList;
 
 public class ItemsStore {

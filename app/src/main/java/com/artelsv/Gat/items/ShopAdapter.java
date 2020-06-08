@@ -1,4 +1,4 @@
-package com.artelsv.sashaitschool.items;
+package com.artelsv.Gat.items;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.artelsv.sashaitschool.R;
+import com.artelsv.Gat.R;
 
 import java.util.ArrayList;
 

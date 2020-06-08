@@ -1,14 +1,11 @@
-package com.artelsv.sashaitschool;
+package com.artelsv.Gat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Application;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,18 +13,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.artelsv.sashaitschool.creatures.Hero;
-import com.artelsv.sashaitschool.creatures.effects.Effect;
-import com.artelsv.sashaitschool.creatures.effects.EffectsStore;
-import com.artelsv.sashaitschool.items.InvenotoryAdapter;
-import com.artelsv.sashaitschool.items.Item;
-import com.artelsv.sashaitschool.items.ItemsStore;
-import com.artelsv.sashaitschool.items.ShopAdapter;
+import com.artelsv.Gat.creatures.Hero;
+import com.artelsv.Gat.creatures.effects.Effect;
+import com.artelsv.Gat.items.InvenotoryAdapter;
+import com.artelsv.Gat.items.Item;
+import com.artelsv.Gat.items.ShopAdapter;
 
 import java.util.ArrayList;
 import java.util.Timer;

@@ -263,7 +263,7 @@
 
             <fragment
                 android:id="@+id/fragment"
-                android:name="com.artelsv.sashaitschool.fragments.Stats"
+                android:name="com.artelsv.Gat.fragments.Stats"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -303,7 +303,7 @@
             <!--                tools:layout="@layout/fragment_inventory" />-->
             <fragment
                 android:id="@+id/fragmentShop"
-                android:name="com.artelsv.sashaitschool.fragments.Shop"
+                android:name="com.artelsv.Gat.fragments.Shop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -312,7 +312,7 @@
 
             <fragment
                 android:id="@+id/fragmentInventory"
-                android:name="com.artelsv.sashaitschool.fragments.Inventory"
+                android:name="com.artelsv.Gat.fragments.Inventory"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"

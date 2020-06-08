@@ -1,9 +1,7 @@
-package com.artelsv.sashaitschool;
+package com.artelsv.Gat;
 
-import android.graphics.drawable.Drawable;
-
-import com.artelsv.sashaitschool.creatures.Hero;
-import com.artelsv.sashaitschool.creatures.effects.Effect;
+import com.artelsv.Gat.creatures.Hero;
+import com.artelsv.Gat.creatures.effects.Effect;
 
 public class Quest {
     private String name;

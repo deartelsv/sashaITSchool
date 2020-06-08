@@ -1,7 +1,6 @@
-package com.artelsv.sashaitschool.creatures.effects;
+package com.artelsv.Gat.creatures.effects;
 
-import com.artelsv.sashaitschool.creatures.Creature;
-import com.artelsv.sashaitschool.creatures.Hero;
+import com.artelsv.Gat.creatures.Creature;
 
 public class Effect {
     private String name;

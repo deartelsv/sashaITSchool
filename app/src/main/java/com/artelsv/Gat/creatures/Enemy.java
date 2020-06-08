@@ -1,4 +1,4 @@
-package com.artelsv.sashaitschool.creatures;
+package com.artelsv.Gat.creatures;
 
 public class Enemy extends Creature {
     public Enemy(String name, String description, Integer money, Integer hp, Integer power, Integer protection) {

@@ -1,6 +1,6 @@
-package com.artelsv.sashaitschool.creatures;
+package com.artelsv.Gat.creatures;
 
-import com.artelsv.sashaitschool.creatures.effects.Effect;
+import com.artelsv.Gat.creatures.effects.Effect;
 
 public class Creature {
     private String name; // имя существа

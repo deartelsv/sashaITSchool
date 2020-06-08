@@ -1,17 +1,7 @@
-package com.artelsv.sashaitschool;
+package com.artelsv.Gat;
 
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.Button;
-
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
-
-import com.artelsv.sashaitschool.creatures.Hero;
-import com.artelsv.sashaitschool.creatures.effects.Effect;
-import com.artelsv.sashaitschool.items.InvenotoryAdapter;
+import com.artelsv.Gat.creatures.Hero;
+import com.artelsv.Gat.creatures.effects.Effect;
 
 import java.util.ArrayList;
 

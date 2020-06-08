@@ -1,4 +1,4 @@
-package com.artelsv.sashaitschool;
+package com.artelsv.Gat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
