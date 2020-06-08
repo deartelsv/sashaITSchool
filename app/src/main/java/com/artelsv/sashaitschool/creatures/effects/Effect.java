@@ -64,10 +64,13 @@ public class Effect {
                 break;
             case 6:
                 creature.restart();
+                break;
             case 7:
                 creature.rest();
+                break;
             case 8:
                 System.exit(1);
+                break;
         }
 
         if (extraEffectType != 0) { //доп.эффекты
@@ -89,10 +92,13 @@ public class Effect {
                     break;
                 case 6:
                     creature.restart();
+                    break;
                 case 7:
                     creature.rest();
+                    break;
                 case 8:
                     System.exit(1);
+                    break;
             }
         }
     }
